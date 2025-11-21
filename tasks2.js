@@ -244,253 +244,63 @@ const stat2 = {
     isOnline: []
 }
 
-// console.log(getOnlineStatus(stat))
-// console.log(getOnlineStatus(stat2))
+console.log(getOnlineStatus(stat))
+console.log(getOnlineStatus(stat2))
 
 // Функция принимает объект {a, b} и возвращает их сумму.
-function getSum(obj){
-    return obj.a + obj.b
-}
-const summa = {
-    a: 39,
-    b: 61
-}
-// console.log(getSum(summa))
 
 // Функция принимает объект {country, capital} и возвращает строку "Столица страны ... — ...".
-const getCapitalOfCountry = (obj) => {
-    return `Столица страны ${obj.country} - ${obj.capital}`
-}
-const data = {
-    country: "Kyrgyzstan",
-    capital: "Bishkek"
-}
-// console.log(getCapitalOfCountry(data))
 
 // Функция принимает объект {x, y} и возвращает "Ось X", "Ось Y" или "В центре", если оба равны 0.
-function getAxis(obj){
-    return obj.x > obj.y ? "Ось X" : obj.x < obj.y ? "Ось Y" : obj.x === 0 && obj.y === 0 ? "В центре" : "Оси одинаковые"
-}
-const axisXY = {
-    x: 0,
-    y: 0
-}
-// console.log(getAxis(axisXY))
 
 // Функция принимает объект {firstName, lastName} и возвращает полное имя.
-const getFullName = (obj) => {
-    return obj.firstName + obj.lastName
-}
-const fullName = {
-    firstName: "Изат ",
-    lastName: "Тилек уулу"
-}
-// console.log(getFullName(fullName))
-// Функция принимает объект {password} и проверяет, длиннее ли пароль 8 символов.
-function getPassword(obj){
-    return obj.key.length > 8 ? "Чётко" : obj.key.length < 8 ? "Пароль должен содержать больше 8 символов" : "ok"
-}
-const password = {
-    key: "махач34.,"
-}
-// console.log(getPassword(password))
 
-// Функция принимает объект {grade} и возвращает "Отлично", "Хорошо", "Плохо". ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-function getAssessment(obj){
-    return obj.assessment > 100 || obj.assessment < 0 ? "Нет такой оценки!" : obj.assessment >= 87 ? "Отлично" : 
-    obj.assessment >= 74 ? "Хорошо" : obj.assessment >= 61 ? "Удовлетворительно" : "Плохо"
-}
-const grade = {
-    assessment: -1
-}
-// console.log(getAssessment(grade))
+// Функция принимает объект {password} и проверяет, длиннее ли пароль 8 символов.
+
+// Функция принимает объект {grade} и возвращает "Отлично", "Хорошо", "Плохо".
 
 // Функция принимает объект {likes} и возвращает "Популярно", если больше 1000.
-function getLikes(obj){
-    return obj.popular > 1000 ? "Популярно" : "hmmm"
-}
 
 
-const likes = {
-    popular: 500
-}
-const likes2 = {
-    popular: 1000
-}
-// console.log(getLikes(likes))
-// console.log(getLikes(likes2))
-
-// Функция принимает объект {width, height} и возвращает площадь уч бурчтук.
-const getSquare = (obj) => (obj.width * obj.height) / 2
-const rectangle = {
-    width: 5,
-    height:4
-}
-// console.log(getSquare(rectangle))
+// Функция принимает объект {width, height} и возвращает площадь прямоугольника.
 
 // Функция принимает объект {radius} и возвращает длину окружности.
-function getSurrounded(obj){
-    return  2 * Math.PI * obj.radius
-}
-const radiusOfRounded = {
-    radius: 3
-}
-// console.log(getSurrounded(radiusOfRounded))
 
+// Функция принимает объект {price, discount} и возвращает цену со скидкой.
 
-// Напиши функцию sum(a, b), которая возвращает сумму двух чисел. ----------------------------------------------------------------------------
-function getSumOfAB(a, b){
-    return a + b
-}
-// console.log(getSumOfAB(10, 35))
+// Функция принимает объект {a, b, c} и возвращает наибольшее число.
 
-// Создай стрелочную функцию isEven(num), которая возвращает true, если число чётное.
-const getEvenOrOd = (num) =>{
-    return num % 2 === 0 ? true : false
-}
-// console.log(getEvenOrOd(50))
+// Функция принимает объект {age} и возвращает "Совершеннолетний" или "Несовершеннолетний".
 
-// Сделай функцию greet(name), которая возвращает строку "Привет, <name>!".
-function getGreet(str){
-    return `Привет, ${str}!`
-}
-// console.log(getGreet("Harry"))
+// Функция принимает объект {temp} и возвращает "Жарко", "Прохладно" или "Холодно".
 
-// Функция square(n) возвращает квадрат числа.
-function getSquar(num1){
-    return Math.pow(num1, 2)                      //Math.pow - вычисления на квадрат числа
-}
-// console.log(getSquar(12))
+// Функция принимает объект {year} и проверяет, является ли год високосным.
 
-// Функция toUpperCase(word) возвращает слово заглавными буквами.
-function capitalizeFirstLetter(str) {
-  if (!str) return ''; // Обработка пустой строки
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+// Функция принимает объект {speed} и возвращает "Превышение", если больше 100.
 
-let originalString = "привет мир";
-let capitalizedString = capitalizeFirstLetter(originalString);
+// Функция принимает объект {hours, rate} и возвращает зарплату (hours * rate).
 
-// console.log(capitalizedString); // Вывод: Привет мир
+// Функция принимает объект {num} и возвращает "Четное" или "Нечетное".
 
-// Стрелочная функция getType(value) возвращает тип данных (typeof value).
-const getType = (value) => typeof value;
+// Функция принимает объект {word} и возвращает длину слова.
 
-// console.log(getType(54)); 
+// Функция принимает объект {a, b} и возвращает результат деления a / b, если b ≠ 0, иначе "Ошибка".
 
-// Функция multiply(a, b, c) возвращает произведение трёх чисел.
-function multiply(a, b, c){
-    return a * b * c
-}
-// console.log(multiply(2, 3, 4))
+// Функция принимает объект {username} и возвращает "Длинное имя", если больше 10 символов.
 
-// Функция isAdult(age) возвращает "Совершеннолетний", если age >= 18, иначе "Несовершеннолетний".
-function getIsAdult(age){
-    return age >= 18 ? "Совершеннолетний" : "Несовершеннолетний"
-}
-// console.log(getIsAdult(18))
+// Функция принимает объект {month} и возвращает время года.
 
-// Функция getLastChar(str) возвращает последний символ строки.
-function getLastChar(str){
-    if (str < 1) return "мало букв";
-    return str[str.length -1]
-}
-// console.log(getLastChar("ffsdfssssj"))
+// Функция принимает объект {age} и возвращает категорию: "Ребёнок", "Подросток", "Взрослый".
 
-// Функция double(num) возвращает удвоенное значение числа.
-function getDouble(num){
-    return num + num
-}
-// console.log(getDouble(7))
+// Функция принимает объект {number} и возвращает "Положительное", "Отрицательное" или "Ноль".
 
-// Функция getStudentInfo(student) возвращает строку вида "Имя: X, Возраст: Y".
-const getStudentInfo = (obj) => `Name: ${obj.studentName}, Age: ${obj.studentAge}`
-const student = {
-    studentName: "Mugiwara",
-    studentAge: 23
-}
-// console.log(getStudentInfo(student))
+// Функция принимает объект {length, width} и возвращает "Квадрат", если стороны равны.
 
-// Функция getDiscount(product) возвращает цену со скидкой 10%.
-function getDiscount(product){
-    return product - (product / 100 * 10)
-}
-// console.log(getDiscount(100))
+// Функция принимает объект {a, b, operation} и выполняет одно из действий: +, -, *, /.
 
-// Функция renameKey(obj, oldKey, newKey) возвращает новый объект с изменённым названием ключа.
-function renameKey(){
+// Функция принимает объект {score} и возвращает "Победа", если больше 50, иначе "Поражение".
 
-}
-
-// Функция hasProperty(obj, key) возвращает true, если в объекте есть данный ключ.
-
-
-// Функция compareNumbers(a, b) возвращает "Больше", "Меньше" или "Равно".
-function getCompareNumbers(a, b){
-    return a > b ? `${a} - больше, чем ${b}`: a < b ? `${a} - меньше, чем ${b}`: `${a} и ${b} равно`
-}
-// console.log(getCompareNumbers(3,1555))
-
-// Функция checkLogin(user, password) возвращает "Доступ разрешён" или "Ошибка".
-
-// Функция isEmptyString(str) возвращает true, если строка пустая.
-function getEmptyString(str){
-    if(!str) return true
-    else return false
-}
-// console.log(getEmptyString(""))
-
-// Функция maxOfThree(a, b, c) возвращает наибольшее число.
-function getMaxOfNum(a, b, c){
-    return Math.max (a, b, c)
-}
-// console.log(getMaxOfNum(99, 23, 4))
-
-// Функция createUser(name, age) возвращает объект {name, age, isAdult: true/false}.
-function getCreateUser(obj){
-    if (obj.age > 18) return `${obj.name} is adult` 
-    else return `${obj.name} is pizdyuk`
-}
-const user1 = {
-    name: "Michael",
-    age:17
-}
-const user2 = {
-    name: "Belek",
-    age:23
-}
-// console.log(getCreateUser(user1))
-// console.log(getCreateUser(user2))
-
-// Функция calculate(a, b, operation) — если operation === "sum", возвращает сумму, если "mul", возвращает произведение.
-function getCalculate(a, b, operation){
-    if(operation === "sum"){
-        return `${a} + ${b} = ${a + b}`
-    } else if (operation === "mul"){
-        return `${a} * ${b} = ${a * b}`
-    } else {
-        return "Не правильный operation"
-    }
-}
-// console.log(getCalculate(3, 5, "*"))
-
-// Функция getMessage(name, callback) — вызывает колбэк callback(name).
-
-
-// Функция getWeather(temp) возвращает объект {temp, status: "Жарко"/"Прохладно"}.
-function getWeather(temp){
-    const temperature = {
-        stat: 23
-    }
-    if (temperature.stat >= 18){
-        return "Жарко"
-    }else{
-        return "Прохладно"
-    }
-}
-console.log(getWeather(17))
-
-// Функция getCircle(r) возвращает объект {radius: r, area: πr², length: 2πr}.
+// Функция принимает объект {balance} и возвращает "Долг", "Ноль", или "Профицит".
 
 // Primitive type
 // 1) number -- 1,2,3,4,5,6,7,8
@@ -504,11 +314,11 @@ console.log(getWeather(17))
 // 7)array
 
 
-// const person = {
-//     name: "Izat",
-//     age: 20,
-//     height: null,
-//     weight: undefined,
+const person = {
+    name: "Izat",
+    age: 20,
+    height: null,
+    weight: undefined,
     // address: {
     //     city: "Bishkek",
     //     country: "KG",
@@ -518,78 +328,18 @@ console.log(getWeather(17))
     //         long: 200
     //     }
     // }
-// }
+}
 
-// person.name = "Kairat"
-// person.age = 23
-// person.mail = "kot@mail.ru"
-// person.mail = "kotemes@mail.ru"
+person.name = "Kairat"
+person.age = 23
+person.mail = "kot@mail.ru"
+person.mail = "kotemes@mail.ru"
 
-// const izat = person
-// const Kairat = {...person}
+const izat = person
+const Kairat = {...person}
 
-// izat.age = 30
-// Kairat.age = 45
+izat.age = 30
+Kairat.age = 45
 // console.log(izat)
 // console.log(person)
 // console.log(Kairat)
-
-
-
-// var
-// let
-// const
-
-//Primitive - переменныйда значениянын озун сактайт
-// number
-// string
-// null
-// undefined
-// boolean
-
-// Reference - ссылочный тип переменныйда значениянын ссылкасын сактайт
-// object - ссылочный тип данных, где данные хранятся парами то есть ключь значения
-// function - function declaration / arrow function
-// array
-
-
-
-
-// let car = "hondaa"
-// car = "bmw"
-
-// const contain = {
-//     car: "honda",
-//     chatacteristic: "hhdgcd"
-// }
-
-// contain.car = "machine"
-
-// if(!contain.chatacteristic){
-//     contain.chatacteristic = {}
-// }
-// if(typeof contain.chatacteristic === "object"){
-//     contain.chatacteristic.year = 1976
-// }
-// delete contain.car
-
-
-// console.log(contain)
-const get = (a, b) => {
-    return a + b
-}
-// const summ = {
-//     a: 4,
-//     b: 7
-// }
-// console.log(get(4, 9))
-
-
-const obj = {
-    name: "Izat",
-    getSumm: function(a, b){
-        return a + b
-    },
-}
-
-// console.log(obj.getSumm(4, 5))
