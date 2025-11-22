@@ -244,8 +244,8 @@ const stat2 = {
     isOnline: []
 }
 
-console.log(getOnlineStatus(stat))
-console.log(getOnlineStatus(stat2))
+// console.log(getOnlineStatus(stat))
+// console.log(getOnlineStatus(stat2))
 
 // Функция принимает объект {a, b} и возвращает их сумму.
 
@@ -336,10 +336,131 @@ person.mail = "kot@mail.ru"
 person.mail = "kotemes@mail.ru"
 
 const izat = person
-const Kairat = {...person}
+const kairat = {...person}
 
 izat.age = 30
-Kairat.age = 45
+kairat.age = 45
 // console.log(izat)
 // console.log(person)
-// console.log(Kairat)
+// console.log(kairat)
+
+
+//primitive: number, string, boolean, null, undefined
+//reference: object, array, function
+let generateNumber = () => {
+    return Math.random()
+}
+const result = generateNumber()
+
+const GENDER = {
+    male: "male",
+    female: "female"
+}
+const car = {
+    model: "Honda",
+    year: 1999,
+    isNew: true,
+    colors: ["blue", "red"],
+    getGovNumber: function (){
+        return generateNumber()
+    },
+    country: null,
+    gender: undefined,
+    owner: {
+        gender: GENDER.male
+    }
+}
+car.country = "Kyrgyzstan"
+car.isOnline = false
+car.city = {}
+car.getdata = function (){}
+delete car.colors[0]
+car.colors[0] = "black"
+delete car.colors
+
+// console.log(car.getGovNumber())
+// console.log(car)
+
+let arrCar = [
+    "black", 1, false,
+    function (){}, GENDER
+]
+arrCar.push(67)
+arrCar.shift()
+arrCar.pop()
+arrCar.unshift("toko")
+
+// console.log(arrCar.slice(0, 1))
+let arrNew = [234]
+let foko = getNewFunc(["gau", arrNew])
+
+function getNewFunc(arr){
+    //function declaration
+    arr === ["gau", [234]]
+    // console.log(arr)
+    return arr
+}
+let getNewFunc2 = (a, b, c, d) =>{
+    //arrow function
+    return a + b + c + d
+}
+let sum = getNewFunc2(1,2,3,4)
+
+// console.log(sum)
+// console.log(foko)
+
+function getSum(a, b){
+    return a + b
+}
+getSum(2, 5)
+getSum(3, 5)
+
+
+function map(smm){
+    const result = maga("pop", 100)
+    if(result > 100){
+
+    }
+}
+
+let maga = (arg, salary) =>{
+    console.log(arg)
+}
+
+let kairat = (arg, salary) =>{
+    console.log(arg)
+}
+
+map(maga)
+
+
+
+
+// function car(motor){
+//     const result = motor(2)
+//     if(result){
+//         console.log("Drive")
+//     }
+// }
+//
+// function amg(oil){
+//     if(oil){
+//         console.log("Work")
+//         return true
+//     }else{
+//         return false
+//     }
+//
+// }
+//
+// function v8(oil){
+//     if(oil){
+//         console.log("Work")
+//         return true
+//     }else{
+//         return false
+//     }
+// }
+//
+// car(amg)
+// car(v8)
