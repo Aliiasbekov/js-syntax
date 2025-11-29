@@ -424,11 +424,11 @@ function map(smm){
 }
 
 let maga = (arg, salary) =>{
-    console.log(arg)
+    // console.log(arg)
 }
 
-let kairat = (arg, salary) =>{
-    console.log(arg)
+let kake = (arg, salary) =>{
+    // console.log(arg)
 }
 
 map(maga)
@@ -464,3 +464,158 @@ map(maga)
 //
 // car(amg)
 // car(v8)
+
+// 1. Дан массив чисел. Используя map, верни новый массив, где каждое число увеличено на 10.
+let arrNumbers = [1, 2, 3];
+let sumArr = arrNumbers.map((nums) => nums + 10)
+// console.log(sumArr)
+
+// 2. Дан массив строк. Используя map, верни новый массив, где каждое слово в верхнем регистре.
+const arrString = ["function", "array", "object"];
+const upperCase = arrString.map((str) => str.charAt(0).toUpperCase() + str.slice(1));
+// console.log(upperCase)
+
+// 3. Дан массив объектов {name, age}. С помощью map создай новый массив, где возраст увеличен на 1.
+let arrObjNew = [
+    {name: "Maga", age: 14,},
+    {name: "Poco", age: 17,},
+    {name: "Itachi", age: 12,}
+]
+const objAgePlus = arrObjNew.map(person => {return {name: person.name, age: person.age + 1}})
+// console.log(objAgePlus)
+
+// 4. Дан массив чисел. Создай функцию doubleNumbers(arr), которая возвращает новый массив с удвоенными значениями через map.
+
+// 5. Дан массив имён. Верни массив, где к каждому имени добавлено "!".
+const arrNames = ["Asan", "Uson", "Hasan"];
+const nameFalse = arrNames.map(names => names + "!")
+// console.log(nameFalse)
+
+// 6. Создай функцию getLengths(arr), которая принимает массив строк и возвращает массив их длин (map).
+function getLengths(arr){
+    return arr.map(str => str.length)
+}
+let stringArr = ["FUNCTION", "Array"];
+// console.log(getLengths(stringArr))
+
+// 7. Дан массив {price: number}. Верни новый массив, где price умножен на 1.2 (добавить 20% налога).
+const getNum = (args) => {
+    return args.map(p => ({price: p.price * 1.2}))
+}
+const arrPrice = [
+    {price: 100},
+    {price: 50}
+]
+let price = getNum(arrPrice)
+// console.log(price)
+
+// 8. Дан массив чисел. Используя map, верни массив строк вида "Value: X".
+
+// 9. Дан массив чисел. Используя map, верни массив булевых значений: true, если число чётное, иначе false.
+let getBoolNums = (nums) => nums.map(b => b % 2 === 0 ? true : false)
+let numsOdOrEven = [2, 3, 4, 5, 6];
+const bool = getBoolNums(numsOdOrEven)
+// console.log(bool)
+
+// 10. Дан массив строк. Верни массив, где каждое слово начинается с заглавной буквы.
+const newArr = [
+    "decleration", "arrow", "primitive", "reference"
+]
+const firstLetter = newArr.map(function (args){return args.charAt(0).toUpperCase() + args.slice(1)})
+// console.log(firstLetter)
+
+// 11. Дан массив объектов {name, score}. Верни массив только с именами.
+let newArr1 = [
+    {
+        name:"Messi",
+        score: 10,
+    },
+    {
+        name:"Ronaldo",
+        score: 7,
+    }
+]
+const nameReturn = newArr1.map(function(args){return args.name})
+// console.log(nameReturn)
+
+// 12. Создай функцию toNegative(arr), которая превращает все положительные числа в отрицательные.
+function toNegative(arr){
+    return arr.map(nums = (neg) => neg > 0? -(neg) : neg)
+}
+let arr1= [1, 2, 3, 4, -55, 0];
+// console.log(toNegative(arr1))
+
+// 13. Дан массив дат (строки). С помощью map верни массив только годов.
+
+// 14. Дан массив {firstName, lastName}. Верни массив строк "firstName lastName".
+let arrReturnString = [
+    true, {firstname:"Kairat", lastname:"Aliiasbekov"}, 12
+];
+let arr3 = arrReturnString.slice(1, 2)
+const retStr = arr3.map(ret = (arg) => arg);
+// console.log(arr3)
+
+// 15. Дан массив чисел. Верни массив квадратов этих чисел.
+let arrNums = [2, 3, 4, 5]
+const squareOfNum = arrNums.map(x => Math.pow(x, 2))
+// console.log(squareOfNum)
+
+// 16. Создай функцию addIndex(arr), которая возвращает массив объектов вида {index, value}.
+function addIndex(arr){
+    return arr.map((value, index) => ({value, index}))
+}
+let myArr = ["nan", "et", "buka"];
+let fuck = addIndex(myArr)
+// console.log(fuck)
+
+// 17. Дан массив цен. Верни массив скидок 10% от каждой цены.
+const discount = (args) => {
+    return args.map(num => num / 10 * 9)
+}
+let arrDiscount = [10, 20, 30];
+let count = discount(arrDiscount)
+// console.log(count)
+
+// 18. Дан массив температур в Цельсиях. Верни их преобразование в Фаренгейты.
+function temp(args){
+    return args.map(args => (args * 9/5) + 32 )
+}
+let celsius = [0, 5, 22, 32];
+const fahrenheit = temp(celsius)
+// console.log(fahrenheit)
+
+// 19. Дан массив слов. Верни массив, где каждое слово заменено его длиной.
+let arrStr = ["java", "script"]
+const returnLength = arrStr.map(args => args.length)
+// console.log(returnLength)
+
+// 20. Дан массив строк. Верни массив, где каждое слово + его длина, например "Hello (5)".
+let retStrLength = (args) => {
+    return args.map(word => `${word} ` + word.length )
+}
+let words =["fakanafoko", "Izatik"];
+const end = retStrLength(words)
+// console.log(end)
+
+// 21. Дан массив объектов {name, salary}. Верни массив, где salary увеличена на 15%.
+
+function getSalary(args){
+    return args.map(dada => `Начальная зп: ${dada.salary}  После добавки: ` +  ((dada.salary / 100 * 15) + dada.salary))
+}
+let newArr2 = [
+    { name: "Mahabat",salary: 70},
+    { name: "Gachi",salary: 40},
+    { name: "Gang",salary: 60}
+]
+let salaryPoint = getSalary(newArr2)
+// console.log(salaryPoint)
+
+// 22. Создай функцию wrap(arr), которая заворачивает каждый элемент в объект вида {value: ...}.
+// 23. Дан массив чисел. Верни массив, где каждое число + его индекс.
+// 24. Дан массив имён. Верни массив объектов {id: index, name: value}.
+// 25. Дан массив строк. Верни массив первых букв каждого слова.
+// 26. Дан массив объектов {a, b}. Верни массив сумм a + b.
+// 27. Дан массив чисел. Создай функцию reverseStringNumbers(arr), которая превращает числа в строки и переворачивает их "123" → "321".
+// 28. Дан массив имен. Верни новый массив, где каждое имя превращено в объект {original, upper}.
+// 29. Дан массив чисел. Верни массив, где числа заменены на "even" или "odd".
+// 30. Дан массив объектов {name, age}. Верни массив только возрастов, умноженных на 2.
