@@ -611,11 +611,65 @@ let salaryPoint = getSalary(newArr2)
 // console.log(salaryPoint)
 
 // 22. Создай функцию wrap(arr), которая заворачивает каждый элемент в объект вида {value: ...}.
+function wrap(arr){
+    return arr.map()
+}
+
 // 23. Дан массив чисел. Верни массив, где каждое число + его индекс.
+let arrAndIndex = [22, 33, 44, 55, 66, 77, 88];
+const indexOfArr = arrAndIndex.map((arg, index) => arg + index)
+// console.log(indexOfArr)
+
 // 24. Дан массив имён. Верни массив объектов {id: index, name: value}.
+const users = ["lexus", "honda", "mersedes"];
+const people = users.map((name, index) => {return {personId: index, name:name}});
+// console.log(people)
+
 // 25. Дан массив строк. Верни массив первых букв каждого слова.
+const strArr = ["string", "array", "boolean"];
+function getFirstLetter(arg){
+    return arg.map(x => x.charAt(0))
+}
+// console.log(getFirstLetter(strArr))
+
 // 26. Дан массив объектов {a, b}. Верни массив сумм a + b.
+const arrObj = [
+    {a: 1, b: 7}
+];
+const getSumOfObj = arrObj.map((sum)=> sum.a + sum.b);
+// console.log(getSumOfObj)
+
 // 27. Дан массив чисел. Создай функцию reverseStringNumbers(arr), которая превращает числа в строки и переворачивает их "123" → "321".
+const numbs = [19, 28, 37, 46, 50,];
+function reverseStringNumbers(arr){
+    return arr.map((arg) => {return String(arg).split('').reverse().join('')})
+    // 1. Преобразуем число в строку.
+    // 2. Разбиваем строку на массив символов с помощью split('').
+    // 3. Переворачиваем массив символов с помощью reverse().
+    // 4. Объединяем массив символов обратно в строку с помощью join('').
+}
+// console.log(reverseStringNumbers(numbs))
+
 // 28. Дан массив имен. Верни новый массив, где каждое имя превращено в объект {original, upper}.
+
+
 // 29. Дан массив чисел. Верни массив, где числа заменены на "even" или "odd".
+const numsArr = [1, 3, 4, 5, 6, 8, 11, 2];
+function getEvenNums(arr){
+    return arr.map(arg => arg % 2 === 0 ? `${arg}-even` : `${arg}-odd`)
+}
+// console.log(getEvenNums(numsArr))
+
 // 30. Дан массив объектов {name, age}. Верни массив только возрастов, умноженных на 2.
+const persons = [
+    {
+        name: "Lady",
+        age:21
+    },
+    {
+        name: "Gaga",
+        age:31
+    }
+];
+const getAgeMult = persons.map(arg => arg.age * 2);
+console.log(getAgeMult)
