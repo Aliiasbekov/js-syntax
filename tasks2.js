@@ -467,7 +467,7 @@ map(maga)
 
 // 1. Дан массив чисел. Используя map, верни новый массив, где каждое число увеличено на 10.
 let arrNumbers = [1, 2, 3];
-let sumArr = arrNumbers.map((nums) => nums + 10)
+let sumArr = arrNumbers.map((num) => num + 10)
 // console.log(sumArr)
 
 // 2. Дан массив строк. Используя map, верни новый массив, где каждое слово в верхнем регистре.
@@ -481,14 +481,19 @@ let arrObjNew = [
     {name: "Poco", age: 17,},
     {name: "Itachi", age: 12,}
 ]
-const objAgePlus = arrObjNew.map(person => {return {name: person.name, age: person.age + 1}})
+const objAgePlus = arrObjNew.map(person => {
+    return {
+        name: person.name,
+        age: person.age + 1
+    }
+})
 // console.log(objAgePlus)
 
 // 4. Дан массив чисел. Создай функцию doubleNumbers(arr), которая возвращает новый массив с удвоенными значениями через map.
 
 // 5. Дан массив имён. Верни массив, где к каждому имени добавлено "!".
 const arrNames = ["Asan", "Uson", "Hasan"];
-const nameFalse = arrNames.map(names => names + "!")
+const nameFalse = arrNames.map(name => name + "!")
 // console.log(nameFalse)
 
 // 6. Создай функцию getLengths(arr), которая принимает массив строк и возвращает массив их длин (map).
@@ -498,21 +503,12 @@ function getLengths(arr){
 let stringArr = ["FUNCTION", "Array"];
 // console.log(getLengths(stringArr))
 
-// 7. Дан массив {price: number}. Верни новый массив, где price умножен на 1.2 (добавить 20% налога).
-const getNum = (args) => {
-    return args.map(p => ({price: p.price * 1.2}))
-}
-const arrPrice = [
-    {price: 100},
-    {price: 50}
-]
-let price = getNum(arrPrice)
-// console.log(price)
+// 7. Дан массив {price: number}. Верни новый массив, где price умножен на 1.2 (добавить 20% налога).\\\\\\\\\\\\\\\\\\\
 
 // 8. Дан массив чисел. Используя map, верни массив строк вида "Value: X".
 
 // 9. Дан массив чисел. Используя map, верни массив булевых значений: true, если число чётное, иначе false.
-let getBoolNums = (nums) => nums.map(b => b % 2 === 0 ? true : false)
+let getBoolNums = (nums) => nums.map(b => b % 2 === 0)
 let numsOdOrEven = [2, 3, 4, 5, 6];
 const bool = getBoolNums(numsOdOrEven)
 // console.log(bool)
@@ -521,7 +517,9 @@ const bool = getBoolNums(numsOdOrEven)
 const newArr = [
     "decleration", "arrow", "primitive", "reference"
 ]
-const firstLetter = newArr.map(function (args){return args.charAt(0).toUpperCase() + args.slice(1)})
+const firstLetter = newArr.map(function (args){
+    return args.charAt(0).toUpperCase() + args.slice(1)
+})
 // console.log(firstLetter)
 
 // 11. Дан массив объектов {name, score}. Верни массив только с именами.
@@ -535,24 +533,26 @@ let newArr1 = [
         score: 7,
     }
 ]
-const nameReturn = newArr1.map(function(args){return args.name})
+const nameReturn = newArr1.map(function(obj){
+    return obj.name
+})
 // console.log(nameReturn)
 
 // 12. Создай функцию toNegative(arr), которая превращает все положительные числа в отрицательные.
 function toNegative(arr){
-    return arr.map(nums = (neg) => neg > 0? -(neg) : neg)
+    return arr.map((neg) => neg > 0 ? -(neg) : neg)
 }
 let arr1= [1, 2, 3, 4, -55, 0];
 // console.log(toNegative(arr1))
 
 // 13. Дан массив дат (строки). С помощью map верни массив только годов.
 
-// 14. Дан массив {firstName, lastName}. Верни массив строк "firstName lastName".
+// 14. Дан массив {firstName, lastName}. Верни массив строк "firstName lastName".///////////////////////////////////////
 let arrReturnString = [
     true, {firstname:"Kairat", lastname:"Aliiasbekov"}, 12
 ];
 let arr3 = arrReturnString.slice(1, 2)
-const retStr = arr3.map(ret = (arg) => arg);
+const retStr = arr3.map((arg) => arg);
 // console.log(arr3)
 
 // 15. Дан массив чисел. Верни массив квадратов этих чисел.
@@ -560,13 +560,8 @@ let arrNums = [2, 3, 4, 5]
 const squareOfNum = arrNums.map(x => Math.pow(x, 2))
 // console.log(squareOfNum)
 
-// 16. Создай функцию addIndex(arr), которая возвращает массив объектов вида {index, value}.
-function addIndex(arr){
-    return arr.map((value, index) => ({value, index}))
-}
-let myArr = ["nan", "et", "buka"];
-let fuck = addIndex(myArr)
-// console.log(fuck)
+// 16. Создай функцию addIndex(arr), которая возвращает массив объектов вида {index, value}.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 // 17. Дан массив цен. Верни массив скидок 10% от каждой цены.
 const discount = (args) => {
@@ -610,19 +605,25 @@ let newArr2 = [
 let salaryPoint = getSalary(newArr2)
 // console.log(salaryPoint)
 
-// 22. Создай функцию wrap(arr), которая заворачивает каждый элемент в объект вида {value: ...}.
-function wrap(arr){
-    return arr.map()
-}
+// 22. Создай функцию wrap(arr), которая заворачивает каждый элемент в объект вида {value: ...}.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+const arr = [1,2,3,4]
 
-// 23. Дан массив чисел. Верни массив, где каждое число + его индекс.
-let arrAndIndex = [22, 33, 44, 55, 66, 77, 88];
-const indexOfArr = arrAndIndex.map((arg, index) => arg + index)
-// console.log(indexOfArr)
+
+const result1 = [
+    {value: 1},
+    {value: 2}
+]
+
+// 23. Дан массив чисел. Верни массив, где каждое число + его индекс.\\\\\\\\\\\\\\\\\\\\\\\\
 
 // 24. Дан массив имён. Верни массив объектов {id: index, name: value}.
 const users = ["lexus", "honda", "mersedes"];
-const people = users.map((name, index) => {return {personId: index, name:name}});
+const people = users.map((name, index) => {
+    return {
+        personId: index,
+        name:name
+    }
+});
 // console.log(people)
 
 // 25. Дан массив строк. Верни массив первых букв каждого слова.
@@ -649,8 +650,11 @@ function reverseStringNumbers(arr){
     // 4. Объединяем массив символов обратно в строку с помощью join('').
 }
 // console.log(reverseStringNumbers(numbs))
+// const i = "IZAT"
+// i.split("").reverse().join("")
 
-// 28. Дан массив имен. Верни новый массив, где каждое имя превращено в объект {original, upper}.
+
+// 28. Дан массив имен. Верни новый массив, где каждое имя превращено в объект {original, upper}. //////////////////////
 
 
 // 29. Дан массив чисел. Верни массив, где числа заменены на "even" или "odd".
@@ -664,6 +668,7 @@ function getEvenNums(arr){
 const persons = [
     {
         name: "Lady",
+        gender: true,
         age:21
     },
     {
@@ -671,5 +676,123 @@ const persons = [
         age:31
     }
 ];
-const getAgeMult = persons.map(arg => arg.age * 2);
-console.log(getAgeMult)
+const getAgeMult = persons.map((arg) =>{ //////////////////////////////////////
+    return {
+        ...arg,
+        age: arg.age * 2,
+    }
+});
+// console.log(getAgeMult)
+
+
+// primitive:
+// string "stroka"
+// number 123
+// boolean true,false
+// null
+// undefined
+
+
+// reference:
+// object{}
+// array[]
+// function()
+// symbol
+
+// let a = 10;
+// a = 8
+
+// const a = 1
+// function getSum(a, b){
+//     return a + b
+// }
+
+// let f = "string";
+// let g = f;
+// f = 234;
+// console.log(g)
+
+// let f = {
+//     name: "Belek"
+// }
+// let h = f;
+// console.log(h)
+//
+// f.name = "Aman"
+// console.log(h)
+
+// let cars = {
+//     age: 15,
+//     color: "red",
+//     width: 100,
+//     height: 120,
+//     length: 200,
+//     getHabaryte: function(){
+//         return this.width * this.height * this.length
+//     }
+// }
+//
+// const result1 = cars.getHabaryte()
+//
+// console.log(result1)
+// console.log(this, "global")
+// function getFunc(){
+//     console.log(this, "function declare")
+// }
+// const getSum1 = () => {
+//     console.log(this, "arrow")
+// }
+
+// getFunc()
+// getSum1()
+// function(){}
+
+const n = "http://youtube.com"
+const f = " JAMIN NAGAGA"
+// console.log(n.charAt(0).toUpperCase() + n.slice(1))
+// console.log(f.toLowerCase())
+// console.log(f.trim()) //удаляет все пробелы с начала и с конца строки
+n.replace("http", "https") // zamena text
+
+let num = 1
+num-- // decrement
+num++ // increment
+
+// console.log(num)
+//b && a - операнд и операнд
+//b || a - операнд или операнд
+
+const newObj123 = {
+    name: "Bermet & Emir",
+    age: 18,
+    gender: "male" || "female",
+}
+// delete newObj123.gender
+// newObj123.race = "nigga"
+// newObj123.name = "Kairat & Sezim"
+newObj123.lastMeet = {
+    date: new Date(),
+    place: "Bishkek"
+}
+// const date = new Date();
+// newObj123.lastMeet.date = date.toISOString().split("T")[0];
+// delete newObj123.lastMeet.date
+// const keys = Object.keys(newObj123) // keys array
+// const values = Object.values(newObj123) // values array
+// const keyValue = Object.entries(newObj123)
+// console.log(keyValue)
+// new Object, {}, Object.create()
+
+
+const arr1234 =[
+    1, 2, 3, 4, 5, 6
+]
+const arr444 = []
+
+for(let i=0; i < arr1234.length; i += 1){
+    arr444[i] = arr1234[i]
+}
+
+const mass = [...arr1234]
+
+// console.log(mass)
