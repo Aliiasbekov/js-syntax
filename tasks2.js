@@ -416,12 +416,6 @@ getSum(2, 5)
 getSum(3, 5)
 
 
-function map(smm){
-    const result = maga("pop", 100)
-    if(result > 100){
-
-    }
-}
 
 let maga = (arg, salary) =>{
     // console.log(arg)
@@ -430,11 +424,6 @@ let maga = (arg, salary) =>{
 let kake = (arg, salary) =>{
     // console.log(arg)
 }
-
-map(maga)
-
-
-
 
 // function car(motor){
 //     const result = motor(2)
@@ -490,7 +479,11 @@ const objAgePlus = arrObjNew.map(person => {
 // console.log(objAgePlus)
 
 // 4. Дан массив чисел. Создай функцию doubleNumbers(arr), которая возвращает новый массив с удвоенными значениями через map.
-
+const newNumArr = [1, 2, 3, 4, 5];
+function doubleNumbers(arr){
+    return arr.map(arg => Math.pow(arg, 2))
+}
+// console.log(doubleNumbers(newNumArr))
 // 5. Дан массив имён. Верни массив, где к каждому имени добавлено "!".
 const arrNames = ["Asan", "Uson", "Hasan"];
 const nameFalse = arrNames.map(name => name + "!")
@@ -504,8 +497,18 @@ let stringArr = ["FUNCTION", "Array"];
 // console.log(getLengths(stringArr))
 
 // 7. Дан массив {price: number}. Верни новый массив, где price умножен на 1.2 (добавить 20% налога).\\\\\\\\\\\\\\\\\\\
+const priceCount = [
+    {
+        price: 100
+    }
+];
+const result21 = priceCount.map(num => num.price * 1.2)
+// console.log(result21)
 
 // 8. Дан массив чисел. Используя map, верни массив строк вида "Value: X".
+const arrNums1 = [1, 2, 3, 4];
+const getNewResult = arrNums1.map(num => `Value: ${num}`);
+// console.log(getNewResult)
 
 // 9. Дан массив чисел. Используя map, верни массив булевых значений: true, если число чётное, иначе false.
 let getBoolNums = (nums) => nums.map(b => b % 2 === 0)
@@ -545,15 +548,20 @@ function toNegative(arr){
 let arr1= [1, 2, 3, 4, -55, 0];
 // console.log(toNegative(arr1))
 
-// 13. Дан массив дат (строки). С помощью map верни массив только годов.
+    // 13. Дан массив дат (строки). С помощью map верни массив только годов.
+const date1 = ["10-10-2000", "12-12-2024", "11-11-2012"];
+const getFullYear = date1.map(num => num.split("-").pop())
+// console.log(getFullYear)
 
 // 14. Дан массив {firstName, lastName}. Верни массив строк "firstName lastName".///////////////////////////////////////
 let arrReturnString = [
-    true, {firstname:"Kairat", lastname:"Aliiasbekov"}, 12
+    {
+        firstname:"Kairat",
+        lastname:"Aliiasbekov"
+    }
 ];
-let arr3 = arrReturnString.slice(1, 2)
-const retStr = arr3.map((arg) => arg);
-// console.log(arr3)
+const retStr = arrReturnString.map((arg) =>`${arg.firstname} ${arg.lastname}`);
+// console.log(retStr)
 
 // 15. Дан массив чисел. Верни массив квадратов этих чисел.
 let arrNums = [2, 3, 4, 5]
@@ -561,7 +569,21 @@ const squareOfNum = arrNums.map(x => Math.pow(x, 2))
 // console.log(squareOfNum)
 
 // 16. Создай функцию addIndex(arr), которая возвращает массив объектов вида {index, value}.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
+function addIndex(arr){
+    return arr.map((value, index) => {
+        return{
+            index,
+            value
+        }
+    })
+}
+const arrOld = [{
+    name: "Edward"
+},{
+    age:132
+}
+]
+// console.log(addIndex(arrOld))
 
 // 17. Дан массив цен. Верни массив скидок 10% от каждой цены.
 const discount = (args) => {
@@ -606,15 +628,17 @@ let salaryPoint = getSalary(newArr2)
 // console.log(salaryPoint)
 
 // 22. Создай функцию wrap(arr), которая заворачивает каждый элемент в объект вида {value: ...}.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-const arr = [1,2,3,4]
-
-
-const result1 = [
-    {value: 1},
-    {value: 2}
-]
+function wrap(elementArr){
+    // return elementArr.map((arg) => new Object({value: arg}))
+    return elementArr.map((arg) => ({value: arg}))
+}
+const arr121 = [1, 2, 333, 4];
+// console.log(wrap(arr121))
 
 // 23. Дан массив чисел. Верни массив, где каждое число + его индекс.\\\\\\\\\\\\\\\\\\\\\\\\
+const numsTeam = [2, 3, 5, 6];
+const getNumsTeam = numsTeam.map((num, index) => num + index)
+// console.log(getNumsTeam)
 
 // 24. Дан массив имён. Верни массив объектов {id: index, name: value}.
 const users = ["lexus", "honda", "mersedes"];
@@ -655,6 +679,12 @@ function reverseStringNumbers(arr){
 
 
 // 28. Дан массив имен. Верни новый массив, где каждое имя превращено в объект {original, upper}. //////////////////////
+const userNames = ["Sezim", "Aktan"];
+const resultUserNames = userNames.map(str => ({
+    original: str,
+    upper: str.toUpperCase()
+}))
+// console.log(resultUserNames)
 
 
 // 29. Дан массив чисел. Верни массив, где числа заменены на "even" или "odd".
@@ -668,7 +698,6 @@ function getEvenNums(arr){
 const persons = [
     {
         name: "Lady",
-        gender: true,
         age:21
     },
     {
@@ -676,12 +705,8 @@ const persons = [
         age:31
     }
 ];
-const getAgeMult = persons.map((arg) =>{ //////////////////////////////////////
-    return {
-        ...arg,
-        age: arg.age * 2,
-    }
-});
+const getAgeMult = persons.map((arg) => ({...arg, age:arg.age * 2}))
+
 // console.log(getAgeMult)
 
 
@@ -762,18 +787,18 @@ num++ // increment
 //b && a - операнд и операнд
 //b || a - операнд или операнд
 
-const newObj123 = {
-    name: "Bermet & Emir",
-    age: 18,
-    gender: "male" || "female",
-}
+// const newObj123 = {
+    // name: "Bermet & Emir",
+    // age: 18,
+    // gender: "male" || "female",
+// }
 // delete newObj123.gender
 // newObj123.race = "nigga"
 // newObj123.name = "Kairat & Sezim"
-newObj123.lastMeet = {
-    date: new Date(),
-    place: "Bishkek"
-}
+// newObj123.lastMeet = {
+//     date: new Date(),
+    // place: "Bishkek"
+// }
 // const date = new Date();
 // newObj123.lastMeet.date = date.toISOString().split("T")[0];
 // delete newObj123.lastMeet.date
@@ -784,15 +809,104 @@ newObj123.lastMeet = {
 // new Object, {}, Object.create()
 
 
-const arr1234 =[
-    1, 2, 3, 4, 5, 6
-]
-const arr444 = []
-
-for(let i=0; i < arr1234.length; i += 1){
-    arr444[i] = arr1234[i]
+//TODO
+const deepCopy = (arr) => {
+    const copy = [] // Создаем новый массив чтобы хранить значения первого массива
+    for(let i= 0; i < arr.length; i += 1){
+        const currentElement = arr[i] // текущий элемент
+        if(Array.isArray(currentElement)){ // Если текущий элемент массив входит в тело этой условии
+            copy[i] = deepCopy(currentElement) // Вызывает функцию чтобы глубоко копировать, передает тек. элемент если он массив
+            continue; // отправляет на следующую итерацию
+        }
+        if(typeof currentElement == "object"){ // Если тек. элемент обьект входит сюда
+            copy[i] = {...currentElement} // копирует обьект обычным способом
+            continue;
+        }
+        copy[i] = currentElement
+    }
+    return copy
 }
+
+const insAr = [1]
+const insObj = {name: "I"}
+const arr1234 = [
+    1, 2, 3, 4, 5, 6, [1], insObj,2,4
+]
+
+const resultDeepCopy = deepCopy(arr1234) // Получаем копию массива
+insAr[0] = 2 // Изменяем значение 1 на 2 чтобы проверить не осталось ли ссылка на массив в копии
+insObj.name = "K" // Изменяем свойство name  чтобы проверить не осталось ли ссылка на массив в копии
+// console.log(insObj, "insObj")
+// console.log(insAr, "insAr")
+// console.log(resultDeepCopy, "resultDeepCopy")
 
 const mass = [...arr1234]
 
 // console.log(mass)
+
+const newObj2 = {
+    name: "Mahabat",
+    age: 23
+}
+
+// newObj2.name
+// newObj2["name"]
+
+const objKeys = Object.keys(newObj2)
+
+const objKeyAndValue = objKeys.map((arg,index) => ({
+    [arg]: newObj2[arg]
+}))
+// result = [{name: ""}, {age: 23}]
+// console.log(objKeyAndValue)
+// console.log(objKeys)
+// console.log(objValues)
+
+
+
+const callback = el => el
+
+// arr.map(callbackDe)
+
+//TODO
+// function map(array, func){
+//     const newArr = []
+//     for(let i = 0; i < array.length; i++){
+//         newArr.push(func(array[i], i))
+//     }
+//     return newArr
+// }
+//
+//
+// const arr = ["Izat", "Kairat"]
+//
+// const result213 = arr.map((arg, index) => {
+//     console.error(arg, index)
+//     return arg
+// })
+
+
+//TODO
+// function filter(array, func){
+//     const newArr = []
+//     for(let i = 0; i < array.length; i++){
+//         const result = func(array[i])
+//         if(result){
+//             newArr.push(array[i])
+//         }
+//     }
+//     return newArr
+// }
+
+const arrFilt = [0,1,0,2,0, 432,43]
+const filteredArray = arrFilt.filter(el => el > 0)
+// const filterdArray = filter(arrFilt, el => el > 0)
+// console.log(filteredArray)
+
+
+
+arrFilt.forEach(el => {
+    console.log(el)
+})
+
+
