@@ -877,9 +877,7 @@ const callback = el => el
 //     return newArr
 // }
 //
-//
 // const arr = ["Izat", "Kairat"]
-//
 // const result213 = arr.map((arg, index) => {
 //     console.error(arg, index)
 //     return arg
@@ -903,10 +901,106 @@ const filteredArray = arrFilt.filter(el => el > 0)
 // const filterdArray = filter(arrFilt, el => el > 0)
 // console.log(filteredArray)
 
+// arrFilt.forEach(el => {
+//     console.log(el)
+// })
+
+//TODO HOMEWORK TASKS //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 1)Дан массив: ["a", "B", "c", "D"]
+// С помощью map сделай так, чтобы:
+// буквы, которые были маленькими — стали большими
+// большие — стали маленькими
+const letters = ["a", "B", "c", "D"];
+const reverseLetters = letters.map(arg => arg === arg.toLowerCase() ? arg.toUpperCase() : arg.toLowerCase());
+// console.log(reverseLetters)
+
+// 2)Дан массив:[1, 2, 3, 10, 25]
+// Используя map, преврати его в массив строк:
+//     "Число 1 — чётное/нечётное"
+const arrStr1 = [1, 2, 3, 10, 25];
+const returnString = arrStr1.map(str => str % 2 === 0 ? `Число ${str} — чётное` : `Число ${str} — нечётное)`);
+// console.log(returnString)
+
+// 3)Дан массив:["hello world", "good morning", "javascript rules"]
+// С помощью map сделай так, чтобы каждое слово в строке начиналось с заглавной буквы:
+const arrWords = ["hello world", "good morning", "javascript rules"];
+const returnUpperCaseOfWord = arrWords.map(arg => arg.split(" ")
+    .map(word => word[0].toUpperCase() + word.slice(1))                  //split(" ") → разбивает по словам
+    .join(" "))                                                                //split("") → разбивает строку по буквам
+// console.log(returnUpperCaseOfWord)
+
+// 4)Дан массив:
+//     [
+//         {name: "Aisha", age: 17},
+//         {name: "Timur", age: 25},
+//         {name: "Kairat", age: 40}
+//     ]
+// Используя map, сделай массив:
+//     "Aisha (несовершеннолетний)"
+//     "Timur (взрослый)"
+//     "Kairat (взрослый)"
+const arrNewArr = [
+    {name: "Aisha", age: 17},
+    {name: "Timur", age: 25},
+    {name: "Kairat", age: 40}
+];
+const resultUserOfAdult = arrNewArr.map(arg => arg.age >= 18 ? `${arg.name} взрослый` : `${arg.name} несовершеннолетний`)
+// console.log(resultUserOfAdult)
+
+//     FILTER — 10 задач:
+//     Оставь только чётные числа из [1,2,3,4,5,6,7,8].
+const numsInArr = [1, 2, 3, 4, 5, 6, 7, 8];
+const resultFiltOfArr = numsInArr.filter(num => num % 2 === 0);
+// console.log(resultFiltOfArr)
+
+//     Убери элементы, которые меньше 10, из [5, 12, 3, 40, 11].
+const arrNew9 = [5, 12, 3, 40, 11, 10];
+const boolResult = arrNew9.filter(num => num >= 10);
+// console.log(boolResult)
+
+//     Из массива ["apple", "kiwi", "banana"] оставь строки длиннее 4 символов.
+const arrLength = ["apple", "kiwi", "banana", "ata"];
+// console.log(arrLength.filter(str => str.length > 4))
+
+//     Фильтруй только строки, из массива ["hello", 12, true, "js"].
+const arrStr9 = ["hello", 12, true, "js"];
+const resStr = arrStr9.filter(arg => typeof arg === "string")
+// console.log(resStr)
+
+//     Оставь только положительные числа из [-5, 0, 8, -2, 3].
+const arrNumbers9 = [-5, 0, 8, -2, ];
+// console.log(arrNumbers9.filter(num => num > 0))
+
+//     Из массива объектов
+//     [{age: 10}, {age: 25}, {age: 17}]
+//     оставь только тех, у кого age ≥ 18.
+const arrObjs = [{age: 10}, {age: 25}, {age: 17}];
+const resultOfFilteredObj = arrObjs.filter(arg => Object.values(arg) >= 18); //arg.age >= 18
+// console.log(resultOfFilteredObj)
+
+// Массив ["a", "aa", "aaa", "aaaa"] — оставь строки длиной ровно 3.
+const arrStr8 = ["a", "aa", "aaa", "aaaa"];
+// console.log(arrStr8.filter(str => typeof str === "string" && str.length === 3))
+
+// Массив ["red","green","blue"] — оставь те, где есть буква "e".
+const arrColor = ["red","green","blue"];
+const resultLetterOfE = arrColor.filter(arg => arg.includes("e"));
+// console.log(resultLetterOfE)
+
+// Массив чисел [1,1,2,2,3,3] — оставь только уникальные (если элемент появляется впервые).
 
 
-arrFilt.forEach(el => {
-    console.log(el)
-})
-
-
+// Из массива строк убери те, что начинаются с буквы "a".
+//
+// ✅ FOREACH — 6 задач
+// Выведи каждый элемент массива вместе с индексом: "0: milk".
+//
+//     Посчитай сумму всех чисел в [5, 5, 10, 20] (используя внешнюю переменную sum).
+//
+// Создай строку из массива ["H", "e", "l", "l", "o"] → "Hello".
+//
+//     Посчитай количество чётных чисел в массиве.
+//
+//     Используя forEach, создай новый массив, где будут только строки (без filter).
+//
+// С помощью forEach выведи элементы массива в обратном порядке, но массив не переворачивай.
