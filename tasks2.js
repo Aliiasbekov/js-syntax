@@ -988,19 +988,24 @@ const resultLetterOfE = arrColor.filter(arg => arg.includes("e"));
 // console.log(resultLetterOfE)
 
 // Массив чисел [1,1,2,2,3,3] — оставь только уникальные (если элемент появляется впервые).
-
+const arrNumbers7 = [1, 1, 2, 3, 3];
+const resultUnique = arrNumbers7.filter((arg, index, array) => array.indexOf(arg) === index);
+// console.log(resultUnique)
 
 // Из массива строк убери те, что начинаются с буквы "a".
-//
+const words1 = ["ananas", "banana", "potato", "apple"];
+const returnWord = words1.filter(arg => !arg.startsWith("a"));
+// console.log(returnWord)
+
 // ✅ FOREACH — 6 задач
 // Выведи каждый элемент массива вместе с индексом: "0: milk".
 //
-//     Посчитай сумму всех чисел в [5, 5, 10, 20] (используя внешнюю переменную sum).
+//Посчитай сумму всех чисел в [5, 5, 10, 20] (используя внешнюю переменную sum).
 //
 // Создай строку из массива ["H", "e", "l", "l", "o"] → "Hello".
 //
-//     Посчитай количество чётных чисел в массиве.
+//Посчитай количество чётных чисел в массиве.
 //
-//     Используя forEach, создай новый массив, где будут только строки (без filter).
+//Используя forEach, создай новый массив, где будут только строки (без filter).
 //
 // С помощью forEach выведи элементы массива в обратном порядке, но массив не переворачивай.
