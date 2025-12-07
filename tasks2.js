@@ -911,7 +911,10 @@ const filteredArray = arrFilt.filter(el => el > 0)
 // буквы, которые были маленькими — стали большими
 // большие — стали маленькими
 const letters = ["a", "B", "c", "D"];
-const reverseLetters = letters.map(arg => arg === arg.toLowerCase() ? arg.toUpperCase() : arg.toLowerCase());
+const reverseLetters = letters.map(arg => {
+    const lowerStr = arg.toLowerCase()
+    return arg === lowerStr ? arg.toUpperCase() : lowerStr
+});
 // console.log(reverseLetters)
 
 // 2)Дан массив:[1, 2, 3, 10, 25]
@@ -925,8 +928,10 @@ const returnString = arrStr1.map(str => str % 2 === 0 ? `Число ${str} — �
 // С помощью map сделай так, чтобы каждое слово в строке начиналось с заглавной буквы:
 const arrWords = ["hello world", "good morning", "javascript rules"];
 const returnUpperCaseOfWord = arrWords.map(arg => arg.split(" ")
-    .map(word => word[0].toUpperCase() + word.slice(1))                  //split(" ") → разбивает по словам
-    .join(" "))                                                                //split("") → разбивает строку по буквам
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))                  //split(" ") → разбивает по словам
+    .join(" "))
+
+//split("") → разбивает строку по буквам
 // console.log(returnUpperCaseOfWord)
 
 // 4)Дан массив:
@@ -944,12 +949,13 @@ const arrNewArr = [
     {name: "Timur", age: 25},
     {name: "Kairat", age: 40}
 ];
-const resultUserOfAdult = arrNewArr.map(arg => arg.age >= 18 ? `${arg.name} взрослый` : `${arg.name} несовершеннолетний`)
+const resultUserOfAdult = arrNewArr.map(arg => `${arg.name} ${arg.age >= 18 ? "взрослый" : "несовершеннолетний"}`)
 // console.log(resultUserOfAdult)
 
 //     FILTER — 10 задач:
 //     Оставь только чётные числа из [1,2,3,4,5,6,7,8].
 const numsInArr = [1, 2, 3, 4, 5, 6, 7, 8];
+
 const resultFiltOfArr = numsInArr.filter(num => num % 2 === 0);
 // console.log(resultFiltOfArr)
 
@@ -975,12 +981,13 @@ const arrNumbers9 = [-5, 0, 8, -2, ];
 //     [{age: 10}, {age: 25}, {age: 17}]
 //     оставь только тех, у кого age ≥ 18.
 const arrObjs = [{age: 10}, {age: 25}, {age: 17}];
-const resultOfFilteredObj = arrObjs.filter(arg => Object.values(arg) >= 18); //arg.age >= 18
+const resultOfFilteredObj = arrObjs.filter(arg => arg.age >= 18); //arg.age >= 18
 // console.log(resultOfFilteredObj)
 
 // Массив ["a", "aa", "aaa", "aaaa"] — оставь строки длиной ровно 3.
-const arrStr8 = ["a", "aa", "aaa", "aaaa"];
-// console.log(arrStr8.filter(str => typeof str === "string" && str.length === 3))
+let age = 14
+const arrStr89 = ["a", "aa", "aaa", "aaaa", 123, 3453, {name:"gaga", age, color: "red"}, [123,23, 23]];
+// console.log(arrStr89.filter(str => typeof str === "string" && str.length === 3))
 
 // Массив ["red","green","blue"] — оставь те, где есть буква "e".
 const arrColor = ["red","green","blue"];
@@ -988,24 +995,111 @@ const resultLetterOfE = arrColor.filter(arg => arg.includes("e"));
 // console.log(resultLetterOfE)
 
 // Массив чисел [1,1,2,2,3,3] — оставь только уникальные (если элемент появляется впервые).
-const arrNumbers7 = [1, 1, 2, 3, 3];
+const arrNumbers7 = [1, 1, 2, 3, 3, 4];
 const resultUnique = arrNumbers7.filter((arg, index, array) => array.indexOf(arg) === index);
 // console.log(resultUnique)
 
 // Из массива строк убери те, что начинаются с буквы "a".
-const words1 = ["ananas", "banana", "potato", "apple"];
+const words1 = ["ananas", "banana", "potato", "apple" ];
 const returnWord = words1.filter(arg => !arg.startsWith("a"));
 // console.log(returnWord)
 
 // ✅ FOREACH — 6 задач
 // Выведи каждый элемент массива вместе с индексом: "0: milk".
-//
+const randomWords = ["milk", 23, true, [12,["asd"]], {}, null];
+// randomWords.forEach((arg, index) => console.log(`${index}: ${arg}`));
+
 //Посчитай сумму всех чисел в [5, 5, 10, 20] (используя внешнюю переменную sum).
-//
+let sum9 = 0;
+const numbers9= [5, 5, 10, 20];
+numbers9.forEach(num => sum9 += num)
+// console.log(sum9)
+
 // Создай строку из массива ["H", "e", "l", "l", "o"] → "Hello".
-//
+const letters9 = ["H", "e", "l", "l", "o"];
+let summm = ""
+letters9.forEach(str => summm += str)
+// console.log(summm)
+
 //Посчитай количество чётных чисел в массиве.
-//
+const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+let resOdNum = 0;
+nums.forEach((num, index, array) =>{
+    if(num % 2 === 0){
+        num
+    }
+})
+const callBack = (acc, el) => {
+    return acc += el
+}
+const resReduce = nums.reduce(callBack, 0)
+console.log(resReduce)
+
+
+let sumRes = [{}, "st"]
+
+nums.forEach((el, index) => {
+    sumRes[index] = el
+})
+// console.log(sumRes)
+
+const arrReduce = [1,2,7, 3, 4, 5, 6, -1, [2,34, ["3"]]]
+//TODO
+const summaReduce = arrReduce.reduce((acc, el) => {
+    return acc += el
+}, 10)
+console.log(summaReduce, "reduce")
+//TODO
+const sortRes = arrReduce.sort((a,b) => a - b)
+
+//TODO
+const foundItem = arrReduce.find(el => el === 1)
+console.log(foundItem)
+
+//TODO
+const everyResult = arrReduce.every(el => el > 1)
+console.log(everyResult)
+
+//TODO
+const someResult = arrReduce.some(el => el < 1)
+console.log(someResult)
+
+//TODO
+const reverseResult = arrReduce.reverse()
+// console.log(reverseResult)
+
+//TODO
+const resConcat = arrReduce.concat([0, 'asdf'])
+// const resConcat = [...arrReduce, ...[0, "asdf"]]
+console.log(resConcat, "res")
+
+//TODO
+const strIndex = arrReduce.findIndex(el => typeof el === "string")
+delete arrReduce[strIndex]
+
+//TODO
+const resFlat = arrReduce.flat(Infinity)
+console.log(resFlat, "resFlat")
+// console.log(sortRes)
 //Используя forEach, создай новый массив, где будут только строки (без filter).
 //
 // С помощью forEach выведи элементы массива в обратном порядке, но массив не переворачивай.
+
+
+// primitive: - В примитивном типе данных, храним само значение переменных
+// number
+// string
+// boolean
+// null
+// undefined
+//
+// reference  : В ссылочном типе данных, храним ссылку на значение, то есть один объект может хранится в нескольких переменных
+// function
+// object
+// array
+
+
+// == - сравнивает значения по принципу динамичных типизированных языков!
+// === - сравнивает значения и типы данных
+// 2 == "2"  -  результат true
+// 2 === "2"  -   результат false
