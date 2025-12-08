@@ -1033,7 +1033,7 @@ const callBack = (acc, el) => {
     return acc += el
 }
 const resReduce = nums.reduce(callBack, 0)
-console.log(resReduce)
+// console.log(resReduce)
 
 
 let sumRes = [{}, "st"]
@@ -1044,25 +1044,27 @@ nums.forEach((el, index) => {
 // console.log(sumRes)
 
 const arrReduce = [1,2,7, 3, 4, 5, 6, -1, [2,34, ["3"]]]
+
 //TODO
 const summaReduce = arrReduce.reduce((acc, el) => {
     return acc += el
 }, 10)
-console.log(summaReduce, "reduce")
+// console.log(summaReduce, "reduce")
 //TODO
 const sortRes = arrReduce.sort((a,b) => a - b)
+// console.log(sortRes)
 
 //TODO
 const foundItem = arrReduce.find(el => el === 1)
-console.log(foundItem)
+// console.log(foundItem)
 
 //TODO
 const everyResult = arrReduce.every(el => el > 1)
-console.log(everyResult)
+// console.log(everyResult)
 
 //TODO
 const someResult = arrReduce.some(el => el < 1)
-console.log(someResult)
+// console.log(someResult)
 
 //TODO
 const reverseResult = arrReduce.reverse()
@@ -1071,7 +1073,7 @@ const reverseResult = arrReduce.reverse()
 //TODO
 const resConcat = arrReduce.concat([0, 'asdf'])
 // const resConcat = [...arrReduce, ...[0, "asdf"]]
-console.log(resConcat, "res")
+// console.log(resConcat, "res")
 
 //TODO
 const strIndex = arrReduce.findIndex(el => typeof el === "string")
@@ -1079,12 +1081,7 @@ delete arrReduce[strIndex]
 
 //TODO
 const resFlat = arrReduce.flat(Infinity)
-console.log(resFlat, "resFlat")
-// console.log(sortRes)
-//Используя forEach, создай новый массив, где будут только строки (без filter).
-//
-// С помощью forEach выведи элементы массива в обратном порядке, но массив не переворачивай.
-
+// console.log(resFlat, "resFlat")
 
 // primitive: - В примитивном типе данных, храним само значение переменных
 // number
@@ -1103,3 +1100,145 @@ console.log(resFlat, "resFlat")
 // === - сравнивает значения и типы данных
 // 2 == "2"  -  результат true
 // 2 === "2"  -   результат false
+
+
+// ===== REDUCE (3 задачи) =====
+
+// 1. Найди сумму элементов массива [2, 3, 4]
+const sumOfNums = [2, 3, 4];
+const resuReduce = sumOfNums.reduce((acc, el) => acc += el, 0);
+// console.log(resuReduce)
+
+// 2. Собери строку "abc" из массива ["a", "b", "c"] с помощью reduce
+const abc = ["a", "b", "c"];
+const resABC = abc.reduce((acc, el) => acc += el, "");
+// const resABC = abc.join("")
+// console.log(resABC)
+
+// 3. Найди произведение чисел [2, 3, 4] → 24
+const multReduce = sumOfNums.reduce((acc, el) => acc *= el, 1)
+// console.log(multReduce)
+
+
+// ===== SORT (3 задачи) =====
+
+// 1. Отсортируй массив чисел по возрастанию: [10, 2, 7, 1]
+const numsRandom = [10, 2, 8, 1];
+const resOfSort = numsRandom.sort((a, b) => a - b);
+// console.log(resOfSort)
+
+// 2. Отсортируй слова по алфавиту: ["banana", "apple", "cherry"]
+const strRandom = ["banana", "six", "apple", "cherry", "gagarina"];
+// strRandom.join();
+// strRandom.sort();
+// console.log(strRandom)
+
+// 3. Отсортируй массив строк по длине: ["hi", "hello", "a"]
+const sortResult = strRandom.sort((a, b) => a.length - b.length)
+// console.log(sortResult)
+
+
+// ===== FIND (3 задачи) =====
+
+// 1. Найди первое число > 50 в массиве [10, 20, 60, 5]
+const numsForFind = [11, 23, 68, 8, 51];
+const resNumOfFind = numsForFind.find(param => param > 50);
+// console.log(resNumOfFind)
+
+// 2. Найди первый чётный элемент в [1, 3, 7, 8, 9]
+const resEvenNumOfFind = numsForFind.find(param => param % 2 === 0);
+// console.log(resEvenNumOfFind)
+
+// 3. Найди первый объект с age = 18 в массиве:
+const findEx = [
+  {name:"A", age: 15},
+  {name:"B", age: 18},
+  {name:"C", age: 20},
+  {name:"D", age: 18}
+];
+const resFindOfObj = findEx.find(el => el.age = 18);
+// console.log(resFindOfObj)
+
+
+// ===== EVERY (3 задачи) =====
+
+// 1. Проверь: все ли элементы массива > 0 — [1, 4, 10]
+const everyParams = [2, 4, 10,];
+// console.log(everyParams.every(el => el > 0))
+
+// 2. Все ли строки начинаются с "a" — ["apple", "avocado", "air"]
+const wordsEvery = ["apple", "avocado", "air", "banana"];
+// console.log(wordsEvery.every(el => el.startsWith("a")))
+
+// 3. Все ли числа чётные — [2, 4, 6, 8]
+const resEveryOfEven = everyParams.every(el => el % 2 === 0);
+// console.log(resEveryOfEven)
+
+// ===== SOME (3 задачи) =====
+
+// 1. Есть ли в массиве отрицательное число — [3, 5, -1, 7]
+const numsForSome = [3, 5, -1, -7];
+const resOfSome = numsForSome.some((el) => el < 0)
+// console.log(resOfSome)
+
+// 2. Есть ли слово длиной > 5 — ["hi", "hello", "worldwide"]
+const resOfEveryLength = wordsEvery.some(el => el.length === 5);
+// console.log(resOfEveryLength)
+
+// 3. Есть ли объект с logged: true —
+const someObj = [
+  {user:"A", logged:false},
+  {user:"B", logged:true},
+  {user:"C", logged:false}
+];
+const someRes = someObj.some(el => el.logged === true)
+// console.log(someRes)
+
+
+
+// ===== REVERSE (3 задачи) =====
+
+// 1. Разверни массив [1, 2, 3, 4]
+
+// 2. Разверни массив строк ["a", "b", "c"]
+
+// 3. Разверни массив ["hello", 1, true, null]
+
+
+
+// ===== CONCAT (3 задачи) =====
+
+// 1. Соедини массивы [1, 2] и [3, 4]
+
+// 2. Соедини массивы [1, 2] и ["a", "b"]
+
+// 3. Соедини массивы [10], [20], [30]
+
+
+
+// ===== FINDINDEX (3 задачи) =====
+
+// 1. Найди индекс первого отрицательного числа — [3, 1, -5, 8]
+
+// 2. Найди индекс элемента "hello" — ["a", "b", "hello", "z"]
+
+// 3. Найди индекс объекта с id = 2 —
+// [
+//   {id:1},
+//   {id:2},
+//   {id:3}
+// ]
+
+
+
+// ===== FLAT (3 задачи) =====
+
+// 1. Сделай массив плоским: [1, [2, 3]]
+
+// 2. Расплюсь массив любой вложенности: [1, [2, [3, [4]]]] → flat(Infinity)
+
+// 3. Преврати [["a"], ["b", ["c"]], "d"] в ["a", "b", "c", "d"]
+
+//Используя forEach, создай новый массив, где будут только строки (без filter).
+
+// С помощью forEach выведи элементы массива в обратном порядке, но массив не переворачивай.
