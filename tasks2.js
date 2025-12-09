@@ -1235,7 +1235,7 @@ const rand = [3, 1, -3, 9, "a", "b", "hello", "z"]
 
 // 2. Найди индекс элемента "hello" — ["a", "b", "hello", "z"]
 // console.log(rand.findIndex(el => el === "hello"))
-
+// rand.findLastIndex(el => el > 8)
 // 3. Найди индекс объекта с id = 2 —
 const objForFindindex = [
   {id:1},
@@ -1261,3 +1261,19 @@ const flatWords = [["a"], ["b", ["c"]], "d"];
 const flatik = flatWords.flat(2)
 // console.log(flatik)
 
+const arr456 = ["array"];
+const obj456 = {name:"jaja"}
+function type(arg) {
+    if (Array.isArray(arg)) {
+        return "array"
+    } else {
+    return typeof arg
+    }
+}
+// console.log(type(arr456))
+// console.log(type(obj456))
+
+const typeOfData = (el) => Array.isArray(el) ? "Array" : typeof el;
+// console.log(typeOfData(arr456))
+// console.log(typeOfData(obj456))
+Object.keys(obj456)
