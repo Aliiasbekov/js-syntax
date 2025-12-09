@@ -1195,50 +1195,69 @@ const someRes = someObj.some(el => el.logged === true)
 // console.log(someRes)
 
 
-
 // ===== REVERSE (3 задачи) =====
 
 // 1. Разверни массив [1, 2, 3, 4]
+const numsReverse = [1, 2, 3, 4]
+// console.log(numsReverse.reverse(el => el))
 
 // 2. Разверни массив строк ["a", "b", "c"]
+const strLetters = ["a", "b", "c"];
+// console.log(strLetters.reverse(el => el), "KATYKEU")
 
 // 3. Разверни массив ["hello", 1, true, null]
-
+const random1 = ["hello", 1, true, null];
+// console.log(random1.reverse())
 
 
 // ===== CONCAT (3 задачи) =====
 
 // 1. Соедини массивы [1, 2] и [3, 4]
+const num543 = [1, 2]
+const num345 = [3, 4]
+const concatRes = num345.concat(...num543)
+// console.log(concatRes)
 
 // 2. Соедини массивы [1, 2] и ["a", "b"]
+const strConcat = ["a", "b"];
+// console.log(num543.concat(strConcat))
 
 // 3. Соедини массивы [10], [20], [30]
+// console.log(strConcat.concat(num543, num345))
 
 
 
 // ===== FINDINDEX (3 задачи) =====
 
 // 1. Найди индекс первого отрицательного числа — [3, 1, -5, 8]
+const rand = [3, 1, -3, 9, "a", "b", "hello", "z"]
+// console.log(rand.findIndex(arg => arg < 0))
 
 // 2. Найди индекс элемента "hello" — ["a", "b", "hello", "z"]
+// console.log(rand.findIndex(el => el === "hello"))
 
 // 3. Найди индекс объекта с id = 2 —
-// [
-//   {id:1},
-//   {id:2},
-//   {id:3}
-// ]
+const objForFindindex = [
+  {id:1},
+  {id:2},
+  {id:3}
+];
+// console.log(objForFindindex.findIndex(el => el.id === 2))
 
 
 
 // ===== FLAT (3 задачи) =====
 
 // 1. Сделай массив плоским: [1, [2, 3]]
+const ex = [1, [2, [3, [4]]]];
+// console.log(ex.flat(1))
 
 // 2. Расплюсь массив любой вложенности: [1, [2, [3, [4]]]] → flat(Infinity)
+// console.log(ex.flat(Infinity))
+
 
 // 3. Преврати [["a"], ["b", ["c"]], "d"] в ["a", "b", "c", "d"]
+const flatWords = [["a"], ["b", ["c"]], "d"];
+const flatik = flatWords.flat(2)
+// console.log(flatik)
 
-//Используя forEach, создай новый массив, где будут только строки (без filter).
-
-// С помощью forEach выведи элементы массива в обратном порядке, но массив не переворачивай.
