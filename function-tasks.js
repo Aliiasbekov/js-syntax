@@ -1,19 +1,56 @@
 // 1. Напиши функцию, которая принимает число и возвращает его квадрат.
+const getPow = (el) => Math.pow(el, 2);
+let nums = 12;
+// console.log(getPow(nums))
 
 // 2. Напиши стрелочную функцию, которая принимает строку и возвращает её длину.
+const getLengthOfString = (el) => el.length;
+// console.log(getLengthOfString("эки"))
 
 // 3. Создай функцию, которая принимает два числа и возвращает большее из них.
+function getMaxOfNum(el, arg){
+    return Math.max(el, arg)
+}
+// console.log(getMaxOfNum(1,22))
 
 // 4. Функция принимает объект {name, age} и возвращает строку "Имя: ... , Возраст: ...".
+function getValues(obj){
+    return `Имя: ${obj.name}, Возраст: ${obj.age}`
+}
+const newObj = {
+    name: "Aibek",
+    age: 22
+}
+// console.log(getValues(newObj))
 
 // 5. Стрелочная функция принимает массив чисел и возвращает сумму всех элементов.
+const getSumOfArr = (arr) => arr.reduce((el, arg) => el += arg, 0)
+const newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+// console.log(getSumOfArr(newArr))
 
 // 6. Функция принимает строку и проверяет, содержит ли она букву "a" (if else).
+function findLetter(el){
+    if(el.includes("a") || el.includes("а")){
+        return `${el}: содержит букву "а"`
+    }else{
+        return `${el}: не содержит букву "а"`
+    }
+}
+// console.log(findLetter("Изот"))
 
 // 7. Напиши функцию, которая принимает массив и выводит каждый элемент в консоль с помощью цикла for.
+const arrNew = ["no", "pain", "NO", "GAIN", 234, true]
+function getResult(arr){
+    for (let i = 0; i < arr.length; i++){
+        console.log(arr[i])
+    }
+    return arr
+}
+// console.log(getResult(arrNew))
 
 // 8. Стрелочная функция принимает два аргумента и возвращает true, если они равны.
-
+const getBoolRes = (el, arg) => el == arg;
+// console.log(getBoolRes(123, "123"))
 // 9. Функция принимает число и возвращает "чётное" или "нечётное".
 
 // 10. Напиши функцию, которая принимает массив и возвращает количество элементов.
