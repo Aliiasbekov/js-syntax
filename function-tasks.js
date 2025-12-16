@@ -51,31 +51,103 @@ function getResult(arr){
 // 8. Стрелочная функция принимает два аргумента и возвращает true, если они равны.
 const getBoolRes = (el, arg) => el == arg;
 // console.log(getBoolRes(123, "123"))
+
 // 9. Функция принимает число и возвращает "чётное" или "нечётное".
+function getNum(el){
+    if (el % 2 === 0){
+        return `${el}: чётное число`
+    }else{
+        return `${el}: нечётное число`
+    }
+}
+// console.log(getNum(20000000000))
 
 // 10. Напиши функцию, которая принимает массив и возвращает количество элементов.
+function getAmount(arr){
+    return arr.length
+}
+const arrNew1 = ["gaga", true, 34, undefined, null, [], {}]
+// console.log(getAmount(arrNew1))
 
 // 11. Стрелочная функция принимает три числа и возвращает их среднее.
+const getAverageNum = (a, b, c) => (a + b + c) / 3;
+// console.log(getAverageNum(3,4,5))
 
 // 12. Функция принимает объект и выводит все его ключи через цикл for...in.
+function getKeys(obj){
+    let keyNew = ""
+    for(const i of Object.keys(obj)) {
+        keyNew += obj[i]
+        // console.log(i)
+    }
+    return obj
+}
+const newObj1 = {
+    name: "Kaka",
+    age: 23,
+}
+// console.log(getKeys(newObj1))
 
 // 13. Стрелочная функция принимает имя и возвращает приветствие: "Привет, Имя!".
+const getName = (el) => `Привет, ${el}!`
+// console.log(getName("Изатик"))
 
 // 14. Функция принимает массив строк и возвращает новую строку, соединённую через пробел.
+function getProbe(arr){
+    return arr.join(" ")
+}
+const arrNew2 = ["gaga", "rina", "mir", "bek"]
+// console.log(getProbe(arrNew2))
 
 // 15. Функция принимает объект и возвращает количество свойств в нём.
+function getObj(obj){
+    return Object.keys(obj).length
+}
+const objNew = {
+    arms: 4,
+    legs: 8,
+    height: "144px"
+}
+// console.log(getObj(objNew))
 
 // 16. Стрелочная функция принимает массив чисел и возвращает новое значение: каждый элемент +1.
-
+const getSum = (arr) => arr.map(el => el += 1)
+const newArr2 = [1,2,3,4,5,6,7,8,9];
+// console.log(getSum(newArr2))
 // 17. Функция принимает число n и выводит числа от 1 до n (цикл).
-
+function getNumN(el){
+    for(let i =0; i < el; i++){
+        console.log(i)
+    }
+    return el
+}
+// console.log(getNumN(5))
 // 18. Функция принимает два числа и возвращает их разность, если первое > второго, иначе сумму.
+function getNums(num1, num2){
+    if(num1 > num2){
+        return num1 - num2
+    }else{
+        return num1 + num2
+    }
+}
+// console.log(getNums(3, 4))
 
 // 19. Стрелочная функция принимает булево значение и возвращает противоположное.
+const getBoolean = (el) => el !== true
+// console.log(getBoolean(true))
 
 // 20. Функция принимает массив и возвращает последний элемент.
+function getLastEl(arr){
+    return arr.at(-1)
+}
+const newArr3 = [123, "asd", true, "false", null];
+// console.log(getLastEl (newArr3))
 
 // 21. Функция принимает строку и делает первую букву заглавной.
+function upperCase(str){
+    return str.toUpperCase().at(0) + str.slice(1)
+}
+// console.log(upperCase("fakanafoko"))
 
 // 22. Стрелочная функция принимает три строки и возвращает самую длинную.
 
