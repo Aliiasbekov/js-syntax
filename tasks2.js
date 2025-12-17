@@ -1121,7 +1121,6 @@ const multReduce = sumOfNums.reduce((acc, el) => acc *= el, 1)
 
 
 // ===== SORT (3 задачи) =====
-
 // 1. Отсортируй массив чисел по возрастанию: [10, 2, 7, 1]
 const numsRandom = [10, 2, 8, 1];
 const resOfSort = numsRandom.sort((a, b) => a - b);

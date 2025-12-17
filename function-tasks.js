@@ -150,18 +150,80 @@ function upperCase(str){
 // console.log(upperCase("fakanafoko"))
 
 // 22. Стрелочная функция принимает три строки и возвращает самую длинную.
+const getLongerOfWord = (str1, str2, str3) =>{
+    if(str1.length >= str2.length && str1.length >= str3.length){
+        return str1
+    }else if(str2.length >= str1.length && str2.length >= str3.length){
+        return str2
+    }else{
+        return str3
+    }
+}
+// console.log(getLongerOfWord("faka", "gaaga", "fakanafoko"))
 
 // 23. Функция принимает объект {x, y} и возвращает, в какой четверти находится точка.
+function getXY(obj){
+    if(obj.x > 0 && obj.y > 0){
+        return `x:${obj.x}, y:${obj.y} точка находится в первой четверти`
+    }else if(obj.x < 0 && obj.y > 0){
+        return `x:${obj.x}, y:${obj.y} точка находится во второй четверти`
+    }else if(obj.x > 0 && obj.y < 0){
+        return `x:${obj.x}, y:${obj.y} точка находится в третьей четверти`
+    }else if(obj.x < 0 && obj.y < 0){
+        return `x:${obj.x}, y:${obj.y} точка находится в четвертой четверти`
+    }else if(obj.x === 0 && obj.y === 0){
+        return `x:${obj.x}, y:${obj.y} точка находится в центре`
+    }else{
+        return `x:${obj.x}, y:${obj.y} один из осей равен к нулевому значению`
+    }
+}
+const newObjX1 = {x: 1, y: 2}
+const newObjX2 = {x: -1, y: 2}
+const newObjX3 = {x: 1, y: -2}
+const newObjX4 = {x: -1, y: -2}
+const newObjX5 = {x: 3, y: 0}
+// console.log(getXY(newObjX1))
+// console.log(getXY(newObjX2))
+// console.log(getXY(newObjX3))
+// console.log(getXY(newObjX4))
+// console.log(getXY(newObjX5))
 
 // 24. Напиши функцию, которая принимает массив чисел и возвращает их произведение.
+function getMult(arr){
+    return arr.reduce((acc, el) => acc *= el, 1)
+}
+const newArr1 = [1, 2, 3, 4];
+// console.log(getMult(newArr1))
 
 // 25. Стрелочная функция принимает два массива и возвращает один общий (конкат).
-
+const getUnion = (arr) => arr.concat(...newArr1)
+const newArr0 = ["ana saga", false]
+// console.log(getUnion(newArr0))
 // 26. Функция принимает объект и выводит все значения через цикл.
+function getForOf(obj){
+    for(const i of Object.values(obj)){
+        console.log(i)
+    }
+    return "Objeeect"
+}
+const newObj2 = {
+    name: "Aliiasbekov",
+    age: 23,
+    gender: "SUPERMAN"
+}
+// console.log(getForOf(newObj2))
 
 // 27. Стрелочная функция принимает строку и возвращает количество слов в строке.
+const getAmountWords = (el) =>{
+    return el.split(" ").length
+}
+// console.log(getAmountWords("naryn bishkek karakol che tam"))
 
 // 28. Функция принимает число и возвращает массив чисел от 0 до этого числа.
+function getNumOf0(num){
+    return num.
+}
+console.log(getNumOf0(5))
 
 // 29. Стрелочная функция принимает массив и возвращает true, если все элементы > 0.
 
