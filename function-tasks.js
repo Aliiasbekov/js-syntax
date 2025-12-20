@@ -221,33 +221,96 @@ const getAmountWords = (el) =>{
 
 // 28. Функция принимает число и возвращает массив чисел от 0 до этого числа.
 function getNumOf0(num){
-    return num.
+    const retNum = [];
+    for(let i = 0; i < num; i++){
+        retNum.push(i)
+    }
+    return retNum
 }
-console.log(getNumOf0(5))
+// console.log(getNumOf0(5))
 
 // 29. Стрелочная функция принимает массив и возвращает true, если все элементы > 0.
+const getBoolEl = (arr) => arr.every(el => el > 0);
+const arrNew3 = [2, 3, 4, 5,];
+// console.log(getBoolEl(arrNew3))
 
 // 30. Функция принимает строку и переворачивает её (reverse).
+function getReverseString(str){
+    return str.split("").reverse().join("")
+}
+// console.log(getReverseString("fakanafoko or Izatik"))
 
 // 31. Стрелочная функция принимает массив и возвращает только первые 3 элемента.
-
+const getRet3El = (arr) =>{
+    const mynaSaga = [];
+    for(let i = 0; i < 3; i++){
+        mynaSaga.push(arr[i])
+    }
+    return mynaSaga
+}
+const arrNew4 = ["ana", 123, null, "gagagag", 345345];
+// console.log(getRet3El(arrNew4))
 // 32. Функция принимает число и проверяет, является ли оно целым.
+function getInteger(num){
+    return Number.isInteger(num) ? "num is integer" : "num is not integer"
+}
+// console.log(getInteger(2.3))
 
 // 33. Стрелочная функция принимает объект и возвращает массив его ключей.
-
+const getKey = (obj) => Object.keys(objNew3)
+const objNew3 = {name: "Jamin", age: 22}
+// console.log(getKey(objNew3))
 // 34. Функция принимает массив объектов [{name, age}] и возвращает имена людей старше 20.
+function getOlderPeople(arr){
+    return arr.filter(el => el.age > 20).map(el => el.name)
+}
+const arrNew5 = [{name: "Jamin", age: 22}, {name: "Izat", age: 15}, {name: "Bakai", age: 22}, {name: "Yrys", age: 19}]
+// console.log(getOlderPeople(arrNew5))
 
 // 35. Стрелочная функция принимает число и возвращает массив чётных чисел от 0 до него.
+const getNumEven = (num) => {
+        const resultNum = [];
+        for(let i = 0; i < num; i++){
+            if(i % 2 === 0){
+                resultNum.push(i)
+            }
+        }
+        return resultNum
+}
+// console.log(getNumEven(6))
 
 // 36. Функция принимает строку и удаляет все пробелы.
+function getStr(str){
+    return str.split(" ").join("")
+}
+// console.log(getStr(" ana myna kana tigine  "))
 
 // 37. Функция принимает два объекта и сравнивает их количество свойств.
+function getProperty(obj1, obj2){
+    return Object.keys(obj1).length === Object.keys(obj2).length
+}
+const newObj41 = {name: "Kairat", age:23};
+const newObj42 = {car: "BMW", color:"red", year: 1999};
+const newObj43 = {university: "KSTU", birth:1965};
+// console.log(getProperty(newObj41, newObj43))
 
 // 38. Стрелочная функция принимает массив строк и возвращает массив длин этих строк.
-
+const getLengthStr = (arr) => arr.toString().split(" ").length
+const newArr4 = ["nan mai sut alma bubble"];
+// console.log(getLengthStr(newArr4))
 // 39. Функция принимает массив чисел и возвращает наибольшее число (через цикл).
+function getMaxNum(arr){
+    return arr.sort((a, b) => b - a).at(0)
+}
+const newArr5 = [3,4,5,6,3,7,8,9,4,6,7,1]
+// console.log(getMaxNum(newArr5))
 
 // 40. Стрелочная функция принимает массив и возвращает количество чётных чисел.
+const getAmountOfEvenNum = (arr) =>{
+    const evenNum = arr.filter(el => el % 2 === 0)
+    return evenNum.length
+}
+// console.log(getAmountOfEvenNum(newArr5), "- количество четных чисел")
 
 // 41. Функция принимает объект продукта {name, price} и выводит строку "Товар ... стоит ...".
 
