@@ -313,21 +313,76 @@ const getAmountOfEvenNum = (arr) =>{
 // console.log(getAmountOfEvenNum(newArr5), "- количество четных чисел")
 
 // 41. Функция принимает объект продукта {name, price} и выводит строку "Товар ... стоит ...".
+function getPriceOfProduct(obj){
+    return `Товар ${obj.name} стоит ${obj.price}`
+}
+const objProduct = {
+    name: "Jeans",
+    price: 1000
+}
+// console.log(getPriceOfProduct(objProduct))
 
 // 42. Стрелочная функция принимает массив булевых значений и считает количество true.
+const getAmountBool = (arr) => arr.filter(el => el === true).length
+const arrBool = [true, false, false, true, false]
+// console.log(getAmountBool(arrBool))
 
 // 43. Функция принимает массив и проверяет, есть ли в нём значение 0.
-
+function getZero(arr){
+    return arr.reduce((acc, el) => el === 0 ? "есть значения 0" : "нет такого значения", 0)
+}
+const arrZero = [1, 3, 0, 4, 0]
+const arrZero1 = [1, 3, 5, 4]
+// console.log(getZero(arrZero))
+// console.log(getZero(arrZero1))
 // 44. Стрелочная функция принимает два числа и возвращает остаток от деления.
+const  getRemainder = (num1, num2) =>{
+    let remainderOfNum
+    return remainderOfNum = `Остаток от деления ${num1} / ${num2} равно к ` + num1 % num2
+}
+// console.log(getRemainder(17, 5))
 
 // 45. Функция принимает массив объектов и возвращает новый с добавленным полем id.
+function getObjOfArr(arr){
+    return arr.map((el, index) => ({id:index, ...el}))
+}
+const arrOfObj = [{name: "Christmas", newYear: 2026}, {name: "Mahabat", newYear: 2000}];
+// console.log(getObjOfArr(arrOfObj))
 
 // 46. Стрелочная функция принимает массив и возвращает новый массив без последнего элемента.
+const getArrPop = (arr) =>{
+    const newZaebal = [...arr]
+    newZaebal.pop()
+    return newZaebal
+}
+const arrZaebal = [1,2,3]
+// console.log(getArrPop(arrZaebal))
 
-// 47. Функция принимает строку и возвращает количество гласных букв.
+// 47. Функция принимает строку и возвращает количество гласных букв. //////////////////////////////////////
+function getVowelsLetter(str){
+    const vowelsLetter = str.match(/[aeiou]/gi)
+    return vowelsLetter ? vowelsLetter.length : 0
+}
+// console.log(getVowelsLetter("Mahabat"))
 
 // 48. Стрелочная функция принимает объект и возвращает строки "ключ: значение" в массиве.
+const getString = (obj) => Object.entries(obj)
+const objSting = {name:"Ключь", property: "Значение"}
+// console.log(getString(objSting))
 
 // 49. Функция принимает два массива и возвращает массив общих элементов.
+function getArrConcat(arr){
+    return arr.concat(newArr)
+}
+const arrConcat2 = ["Экинчи массив"]
+// console.log(getArrConcat(arrConcat2))
 
 // 50. Стрелочная функция принимает число и выводит таблицу умножения от 1 до 10.
+const getTable = (num) => {
+    let resNum = []
+    for(let i = 0; i < 10; i++){
+        resNum.push(`${num} * ${i} = ${num * i}`)
+    }
+    return resNum
+}
+// console.table(getTable(4))
