@@ -30,7 +30,7 @@ const newArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 // 6. Функция принимает строку и проверяет, содержит ли она букву "a" (if else).
 function findLetter(el){
-    if(el.includes("a") || el.includes("а")){
+    if(el.includes("a") || el.includes("А")){
         return `${el}: содержит букву "а"`
     }else{
         return `${el}: не содержит букву "а"`
@@ -75,12 +75,8 @@ const getAverageNum = (a, b, c) => (a + b + c) / 3;
 
 // 12. Функция принимает объект и выводит все его ключи через цикл for...in.
 function getKeys(obj){
-    let keyNew = ""
-    for(const i of Object.keys(obj)) {
-        keyNew += obj[i]
-        // console.log(i)
-    }
-    return obj
+    // return Object.keys(obj).reduce((acc, el) => acc += ` ${el}`, "")
+    return Object.keys(obj).join(" ")
 }
 const newObj1 = {
     name: "Kaka",
@@ -133,7 +129,7 @@ function getNums(num1, num2){
 // console.log(getNums(3, 4))
 
 // 19. Стрелочная функция принимает булево значение и возвращает противоположное.
-const getBoolean = (el) => el !== true
+const getBoolean = (el) => !el
 // console.log(getBoolean(true))
 
 // 20. Функция принимает массив и возвращает последний элемент.
@@ -194,7 +190,6 @@ function getMult(arr){
 }
 const newArr1 = [1, 2, 3, 4];
 // console.log(getMult(newArr1))
-
 // 25. Стрелочная функция принимает два массива и возвращает один общий (конкат).
 const getUnion = (arr) => arr.concat(...newArr1)
 const newArr0 = ["ana saga", false]
@@ -204,14 +199,13 @@ function getForOf(obj){
     for(const i of Object.values(obj)){
         console.log(i)
     }
-    return "Objeeect"
 }
 const newObj2 = {
     name: "Aliiasbekov",
     age: 23,
     gender: "SUPERMAN"
 }
-// console.log(getForOf(newObj2))
+getForOf(newObj2)
 
 // 27. Стрелочная функция принимает строку и возвращает количество слов в строке.
 const getAmountWords = (el) =>{
@@ -220,14 +214,14 @@ const getAmountWords = (el) =>{
 // console.log(getAmountWords("naryn bishkek karakol che tam"))
 
 // 28. Функция принимает число и возвращает массив чисел от 0 до этого числа.
-function getNumOf0(num){
-    const retNum = [];
+function getNumOfIter(num){
+    const resNum = []
     for(let i = 0; i < num; i++){
-        retNum.push(i)
+        resNum.push(i)
     }
-    return retNum
+    return resNum
 }
-// console.log(getNumOf0(5))
+// console.log(getNumOfIter(5))
 
 // 29. Стрелочная функция принимает массив и возвращает true, если все элементы > 0.
 const getBoolEl = (arr) => arr.every(el => el > 0);
@@ -270,10 +264,8 @@ const arrNew5 = [{name: "Jamin", age: 22}, {name: "Izat", age: 15}, {name: "Baka
 // 35. Стрелочная функция принимает число и возвращает массив чётных чисел от 0 до него.
 const getNumEven = (num) => {
         const resultNum = [];
-        for(let i = 0; i < num; i++){
-            if(i % 2 === 0){
-                resultNum.push(i)
-            }
+        for(let i = 0; i < num; i+=2){
+            resultNum.push(i)
         }
         return resultNum
 }
@@ -295,9 +287,10 @@ const newObj43 = {university: "KSTU", birth:1965};
 // console.log(getProperty(newObj41, newObj43))
 
 // 38. Стрелочная функция принимает массив строк и возвращает массив длин этих строк.
-const getLengthStr = (arr) => arr.toString().split(" ").length
-const newArr4 = ["nan mai sut alma bubble"];
+const getLengthStr = (arr) => arr.map(el => el.length)
+const newArr4 = ["nan mai sut alma bubble",  "123123"];
 // console.log(getLengthStr(newArr4))
+
 // 39. Функция принимает массив чисел и возвращает наибольшее число (через цикл).
 function getMaxNum(arr){
     return arr.sort((a, b) => b - a).at(0)
@@ -308,6 +301,7 @@ const newArr5 = [3,4,5,6,3,7,8,9,4,6,7,1]
 // 40. Стрелочная функция принимает массив и возвращает количество чётных чисел.
 const getAmountOfEvenNum = (arr) =>{
     const evenNum = arr.filter(el => el % 2 === 0)
+    // arr.reduce((acc, el) => el % 2 === 0 ? acc++ : acc, 0)
     return evenNum.length
 }
 // console.log(getAmountOfEvenNum(newArr5), "- количество четных чисел")
@@ -323,13 +317,13 @@ const objProduct = {
 // console.log(getPriceOfProduct(objProduct))
 
 // 42. Стрелочная функция принимает массив булевых значений и считает количество true.
-const getAmountBool = (arr) => arr.filter(el => el === true).length
+const getAmountBool = (arr) => arr.filter(el => el).length
 const arrBool = [true, false, false, true, false]
 // console.log(getAmountBool(arrBool))
 
 // 43. Функция принимает массив и проверяет, есть ли в нём значение 0.
 function getZero(arr){
-    return arr.reduce((acc, el) => el === 0 ? "есть значения 0" : "нет такого значения", 0)
+    return arr.includes(0) ? "0 бар" : "0 жок"
 }
 const arrZero = [1, 3, 0, 4, 0]
 const arrZero1 = [1, 3, 5, 4]
@@ -337,14 +331,13 @@ const arrZero1 = [1, 3, 5, 4]
 // console.log(getZero(arrZero1))
 // 44. Стрелочная функция принимает два числа и возвращает остаток от деления.
 const  getRemainder = (num1, num2) =>{
-    let remainderOfNum
-    return remainderOfNum = `Остаток от деления ${num1} / ${num2} равно к ` + num1 % num2
+    return `Остаток от деления ${num1} / ${num2} равно к ` + num1 % num2
 }
 // console.log(getRemainder(17, 5))
 
 // 45. Функция принимает массив объектов и возвращает новый с добавленным полем id.
 function getObjOfArr(arr){
-    return arr.map((el, index) => ({id:index, ...el}))
+    return arr.map((el, index) => ({id: index, ...el}))
 }
 const arrOfObj = [{name: "Christmas", newYear: 2026}, {name: "Mahabat", newYear: 2000}];
 // console.log(getObjOfArr(arrOfObj))
@@ -366,16 +359,18 @@ function getVowelsLetter(str){
 // console.log(getVowelsLetter("Mahabat"))
 
 // 48. Стрелочная функция принимает объект и возвращает строки "ключ: значение" в массиве.
-const getString = (obj) => Object.entries(obj)
+const getString = (obj) => Object.keys(obj).map(el => `${el}: ${obj[el]}`)
 const objSting = {name:"Ключь", property: "Значение"}
+//result - ["name: Ключь", "property: Значение"]
 // console.log(getString(objSting))
 
 // 49. Функция принимает два массива и возвращает массив общих элементов.
-function getArrConcat(arr){
-    return arr.concat(newArr)
+function getArrConcat(arr, arr2){
+    return arr.concat(arr2)
 }
+const arrConcat3 = ["учунчу массив"]
 const arrConcat2 = ["Экинчи массив"]
-// console.log(getArrConcat(arrConcat2))
+// console.log(getArrConcat(arrConcat2, arrConcat3))
 
 // 50. Стрелочная функция принимает число и выводит таблицу умножения от 1 до 10.
 const getTable = (num) => {
@@ -385,4 +380,4 @@ const getTable = (num) => {
     }
     return resNum
 }
-// console.table(getTable(4))
+console.table(getTable(4))
