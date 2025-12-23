@@ -2,7 +2,7 @@ let foko = getNewFunc(["gau", arrNew])
 
 function getNewFunc(arr){
     //function declaration
-    arr === ["gau", [234]]
+    // arr === ["gau", [234]]
     // console.log(arr)
     return arr
 }
