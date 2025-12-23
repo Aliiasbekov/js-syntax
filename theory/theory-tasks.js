@@ -26,11 +26,12 @@ const arr2 = [1, 2, 3];
 //
 // Создай function declaration, которая возвращает сумму двух чисел.
 function getSumOfTwoNumbers(x, y) {
-    // console.log(x + y)
+    return x + y
 }
-getSumOfTwoNumbers(3, 7);
+// console.log(getSumOfTwoNumbers(3, 7));
+
 //     Перепиши её в arrow function.
-const getSum = (x, y) => //console.log(x + y);
+const getSum = (x, y) => x + y;
 getSum(4, 6);
 // Создай анонимную функцию и вызови её сразу (IIFE).
 (function() {
@@ -44,7 +45,7 @@ function noReturn() {
 //     4️⃣ Array (методы)
 // Используя map, получи массив квадратов чисел.
 const numbers = [1, 2, 8, 4, 5, 0, 7];
-// console.log(numbers.map(num => num ** 2))
+// console.log(numbers.map(num => num**))
 //     Используя filter, получи только чётные числа.
 // console.log(numbers.filter(num => num % 2 === 0))
 //     Используя reduce, найди сумму массива.
@@ -106,7 +107,7 @@ let str2 = "js is cool to today cold";
 //     Получи последний символ строки через at.
 // console.log(str2.at(-1))
 // 7️⃣ Number / Math
-let num = 2003
+let num = "2003"
 // Преобразуй число 255 в строку.
 // console.log(num.toString())
 // console.log(num + "")
@@ -117,21 +118,26 @@ let num = 2003
 // Округли 4.7 вверх и вниз.
 // console.log(Math.floor(4.7))
 // console.log(Math.ceil(4.7))
-// console.log(Math.round(4.5))
+// console.log((4.555555555).toFixed(2))
 
 //     Получи случайное число от 1 до 10.
 // console.log((Math.random() * 10).toFixed(0))
+// console.log(Math.random() * (10 - 1) + 1)
 // 8️⃣ Date
 // Date.now() 
 // Получи текущую дату (timestamp).
 // console.log(Date().toISOString().split("T")[0]);
+// console.log(Date.now())
 //     Получи текущий день месяца.
 // console.log(new Date().getDate());
 //     Установи дату на +5 дней вперёд.
 const date = new Date();
 date.setDate(date.getDate() + 5);
+// console.log(date)
 //     Преобразуй дату в ISO-строку.
 // console.log(date.toISOString());
+const da = "2025-12-23T23:54:34"
+console.log(da.split("T").at(1).slice(0, 2))
 // 9️⃣ Set / Map
 const nums = [1, 2, 2, 3, 4, 4, 5];
 // Удали дубликаты из массива с помощью Set.
@@ -141,6 +147,8 @@ const myMap = new Map();
 myMap.set("name", "Izat");
 myMap.set("age", 25);
 myMap.set("city", "NY");
+myMap.get("adf")
+myMap.size
 //     В чём отличие Map от обычного объекта?
 
 // 🔟 Операторы
@@ -157,6 +165,7 @@ myMap.set("city", "NY");
 // console.log(function(){ return 5 > 3 ? "da" : "net"}())
 // Объясни ++i и i++ на примере.
 //
+
 //     Что делает typeof?
 // console.log(typeof "");
 //     Используй in для проверки ключа в объекте.
@@ -164,7 +173,7 @@ myMap.set("city", "NY");
 //     Используй instanceof для массива.
 // console.log(arrA instanceof Array);
 //     Удали поле объекта с delete.
-// console.log(delete obj.age);
+console.log(delete obj.age);
 // Скопируй объект с помощью ....
 // console.log({...obj, example: "anamyna"})
 // 🔁 Циклы
@@ -182,11 +191,16 @@ for (const key in obj) {
     // console.log(`${key}: ${obj[key]}`);
 }
 // Используй while для обратного отсчёта.
-let count = 5;
-while (count > 0) {
-    // console.log(count);
-    count--;
-}
+let count = 0;
+// while (count !== 0) {
+//     console.log(count, "whilte");
+// }
+
+do{
+    console.log(count, "do whitle")
+    count++
+}while (count <= 3)
+
 //     В чём отличие while и do...while?
 // 🧠 Логика / Комбо
 // Дан массив чисел.

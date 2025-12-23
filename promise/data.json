@@ -1,0 +1,19 @@
+{
+  "name": "Izat",
+  "age": 22,
+  "gender": true,
+  "work": {
+    "job": "Frontend",
+    "salary": null
+  },
+  "family": [
+    {
+      "name": "Kairat",
+      "role": "daddy"
+    },
+    {
+      "name": "Belek",
+      "role": "mommy"
+    }
+  ]
+}
