@@ -1,3 +1,4 @@
+
 // const containers =  document.getElementsByClassName("container")
 //
 // containers[0].innerHTML = `
@@ -137,7 +138,7 @@ btn.onclick = onSave
 // 🔹 Select / getElement / querySelector
 //
 // Найди элемент по id и измени его текст.
-//
+
 //     Найди все элементы по class и выведи их количество в console.
 //
 //     Найди первый элемент p через querySelector.
