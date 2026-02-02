@@ -142,7 +142,7 @@ selectEl.addEventListener("click", (event) => {
 })
 // Если размер > 20px — делай текст жирным.
 sizeEl.addEventListener("click", (event) => {
-    if(sectionTitle.style.fontSize === "20px"){
+    if(sectionTitle.style.fontSize > "20px"){
         sectionTitle.style.fontWeight = "900"
     }else{
         sectionTitle.style.fontWeight = "none"
@@ -170,13 +170,13 @@ resetBtn.addEventListener("click", (event) => {
     sectionTitle.innerText = "Заводские настройки"
 })
 // Сделай, чтобы при mouseover менялся цвет текста.
-sectionTitle.addEventListener("mouseup", (event) => {
-    sectionTitle.style.color = "brown"
+sectionTitle.addEventListener("mouseover", (event) => {
+    sectionTitle.style.color = "red"
 })
 // Ограничь ввод в input до 20 символов.
 textInput.addEventListener("input", (event) => {
-    if(textInput.value.length > 10){
-        textInput.value = textInput.value.slice(0, 10)
+    if(event.target.value < 10){
+        textInput.value = event.target.value
     }
 })
 // Если input пустой — пиши "Введите текст".
