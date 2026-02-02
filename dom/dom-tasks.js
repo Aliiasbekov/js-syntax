@@ -108,7 +108,7 @@ containerByClassName.appendChild(p)
 // Измени текст sectionTitle на "DOM is cool".
 sectionTitle.innerText = "DOM is cool"
 // Сделай фон sectionTitle зелёным.
-sectionTitle.style.backgroundColor = "green"
+sectionTitle.style.backgroundColor = "purple"
 // Скрывай sectionTitle кнопкой.
 // Покажи sectionTitle кнопкой.
 
@@ -125,33 +125,75 @@ showBtn.addEventListener("click", (event) => {
 colors.unshift("yellow")
 appendOptionEl("yellow", selectEl)
 // Добавь размер 40px в список размеров.
-
-// Добавь font-weight 900.
-//
+fontSizes.push("40px")
+appendOptionEl("40px", sizeEl)
 // Выведи в консоль выбранный цвет при изменении select.
-//
+selectEl.addEventListener("click", (event) => {
+    // console.log(`Цвет изменён на ${event.target.value} color`)
+})
 // 🟡 СРЕДНИЙ УРОВЕНЬ
-//
 // При выборе "blue" добавляй рамку к заголовку.
-//
+selectEl.addEventListener("click", (event) => {
+    if(sectionTitle.style.color === "blue"){
+        sectionTitle.style.border = "solid"
+    }else{
+        sectionTitle.style.border = "none"
+    }
+})
 // Если размер > 20px — делай текст жирным.
-//
+sizeEl.addEventListener("click", (event) => {
+    if(sectionTitle.style.fontSize === "20px"){
+        sectionTitle.style.fontWeight = "900"
+    }else{
+        sectionTitle.style.fontWeight = "none"
+    }
+})
 // Сделай плавное появление при показе текста.
-//
+
 // Добавь кнопку "Сброс стилей".
-//
+const resetBtn = document.querySelector(".resetBtn")
+resetBtn.addEventListener("click", (event) => {
+    sectionTitle.style.color = "black";
+    sectionTitle.style.fontWeight = "normal";
+    sectionTitle.style.fontSize = "2em";
+    sectionTitle.style.textAlign = "start";
+    sectionTitle.style.display = "block";
+    sectionTitle.style.backgroundColor = "white";
+    sectionTitle.style.color = "black";
+
+    selectEl.value = ""
+    sizeEl.value = ""
+    fwEl.value = ""
+    taSelect.value = ""
+    textInput.value = ""
+
+    sectionTitle.innerText = "Заводские настройки"
+})
 // Сделай, чтобы при mouseover менялся цвет текста.
-//
+sectionTitle.addEventListener("mouseup", (event) => {
+    sectionTitle.style.color = "brown"
+})
 // Ограничь ввод в input до 20 символов.
-//
+textInput.addEventListener("input", (event) => {
+    if(textInput.value.length > 10){
+        textInput.value = textInput.value.slice(0, 10)
+    }
+})
 // Если input пустой — пиши "Введите текст".
-//
-// При вводе числа — меняй background заголовка на жёлтый.
-//
+textInput.placeholder = "Введите текст"
+
 // Сделай счётчик введённых символов.
-//
+textInput.addEventListener("mouseover", (event) => {
+    if(textInput.value){
+        alert(`Использовано ${textInput.value.length} символов`)
+    }
+})
 // При выборе "hidden" показывай alert.
-//
+selectEl.addEventListener("click", (event) => {
+    if(event.target.value === "hidden"){
+        alert("hey guys")
+    }
+})
 // 🔵 ПРОДВИНУТЫЕ
 //
 // Сохраняй выбранные стили в localStorage.
