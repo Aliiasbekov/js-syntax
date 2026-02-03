@@ -80,7 +80,6 @@ const appendTodos = async() => {
             if(response === 200){
                 el.parentNode.style.display = "none"
             }
-            // appendTodos()
         })
     })
 }
@@ -90,12 +89,18 @@ const formEl = document.querySelector(".todo_form")
 const formInputEl = document.querySelector(".todo_form_input")
 
 formEl.addEventListener("submit", async (event) => {
-    event.preventDefault()
-    const res = await createTodo({
-        title: formInputEl.value
-    })
-    if(res.id){
-        appendTodos()
+    event.preventDefault();
+    if(event.target.value === ""){
+        alert("пустое значение")
     }
+    const res = await createTodo({
+        title: formInputEl.value,
+    })
+    formInputEl.value = ""
 
+    if(res.id){
+        appendTodos(this)
+    }
 })
+
+
