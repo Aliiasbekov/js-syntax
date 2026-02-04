@@ -38,7 +38,12 @@ button, input{
     border-radius: 10px;
 
 }
-.list_item_btn{
+.list_item_actions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.list_item_btn, .list_item_edit{
     padding: 0;
     background: none;
     border: none;
@@ -47,7 +52,7 @@ button, input{
     margin: 3px 8px;
     font-size: 24px;
 }
-.list_item_btn img{
+.list_item_actions img{
     margin: 3px 10px;
     width: 20px;
     height: 23px;

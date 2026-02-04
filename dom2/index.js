@@ -58,28 +58,53 @@ const updateTodo = async(id, data) => {
 }
 
 const sectionListEl = document.querySelector(".section_list")
+const retArr = ["Izat", "Kairat"]
+const finRet = retArr.map(el =>{
+    return `${el} hello`
+})
+console.log(finRet.join(" "))
+"Izat  Kairat "
 
 
 const appendTodos = async() => {
     const todos = await getAllTodos()
-    todos.forEach(el => {
-        sectionListEl.innerHTML +=
-        `
-        <div class="list_item">
+    const items = todos.map(el => {
+        return `
+            <div class="list_item">
                 <p class="list_item_title">${el.title}</p>
-                <button data-id="${el.id}" class="list_item_btn">
-                    <img src="./assets/trash.svg" alt="">
-                </button>
+                <div class="list_item_actions">
+                    <button data-id="${el.id}" class="list_item_btn">
+                        <img src="./assets/trash.svg" alt="">
+                    </button>
+                    <button data-id="${el.id}" class="list_item_edit">
+                        <img src="./assets/pen.svg" alt="">
+                    </button>
+                </div>
             </div>
         `
     })
+    sectionListEl.innerHTML = items.join(" ")
+
     const delBtns = document.querySelectorAll(".list_item_btn")
     delBtns.forEach(el => {
         el.addEventListener("click", async (event) => {
             const response = await deleteTodo(el.dataset.id)
             if(response === 200){
-                el.parentNode.style.display = "none"
+                el.parentNode.parentNode.style.display = "none"
             }
+        })
+    })
+
+
+
+    const editBtns = document.querySelectorAll(".list_item_edit")
+    editBtns.forEach(el => {
+        el.addEventListener("click", async (event) => {
+            const updateText = prompt("Text update")
+            el.parentNode.parentNode.children[0].innerText = updateText
+            await updateTodo(el.dataset.id, {
+                title: updateText
+            })
         })
     })
 }
